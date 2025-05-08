@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<sdf version="1.11">    <model name="dropper_marker">
+        <static>false</static>
+        <link name="link">
+            <visual name="dropper_marker_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://dropper_marker/mesh/dropper_marker.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="dropper_marker_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://dropper_marker/mesh/dropper_marker.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+    </model>
+</sdf>
