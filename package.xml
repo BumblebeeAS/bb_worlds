@@ -2,12 +2,33 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?><package format="3">
   <name>bb_worlds</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="helenamoyen@usp.br">lena</maintainer>
+  <description>
+    <p>This package features the world configs/launch files</p>
+  </description>
+  <maintainer email="islabella@email.com" />
   <license>Apache-2.0</license>
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>ament_cmake_python</build_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <depend>xacro</depend>
+  <depend>geometry_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>dave_interfaces</depend>
+  <depend>dave_ros_gz_plugins</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <!-- Some dependencies on vrx_gz models -->
+  <depend>vrx_gz</depend>
+  <depend>vrx_gazebo</depend>
+  <depend>wamv_gazebo</depend>
+  <depend>bbasv_gazebo_plugins</depend>
+
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>

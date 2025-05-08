@@ -1,0 +1,558 @@
+<?xml version="1.0" ?>
+<sdf version="1.11">
+  <world name="sauvc">
+    <scene>
+      <ambient>0.01 0.01 0.01 1.0</ambient>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <shadows>1</shadows>
+    </scene>
+    <physics name="default_physics" default="true" type="ode">
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+          <sor>0.5</sor>
+        </solver>
+      </ode>
+    </physics>
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+      <disable_on_drained_battery>true</disable_on_drained_battery>
+    </plugin>
+    <plugin
+      filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+    <plugin
+      filename="gz-sim-magnetometer-system"
+      name="gz::sim::systems::Magnetometer">
+    </plugin>
+    <plugin
+      filename="gz-sim-forcetorque-system"
+      name="gz::sim::systems::ForceTorque">
+    </plugin>
+    <plugin
+      filename="gz-sim-particle-emitter-system"
+      name="gz::sim::systems::ParticleEmitter">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="gz-sim-contact-system"
+      name="gz::sim::systems::Contact">
+    </plugin>
+    <plugin
+      filename="gz-sim-navsat-system"
+      name="gz::sim::systems::NavSat">
+    </plugin>
+
+    <scene>
+      <sky></sky>
+      <grid>false</grid>
+      <ambient>1.0 1.0 1.0</ambient>
+      <background>0.8 0.8 0.8</background>
+    </scene>
+
+    <!-- Origin placed at Singapore Poly Swimming Pool  -->
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <world_frame_orientation>ENU</world_frame_orientation>
+      <latitude_deg>1.309562</latitude_deg>
+      <longitude_deg>103.7745783</longitude_deg>
+      <elevation>0.0</elevation>
+      <heading_deg>0.0</heading_deg>
+    </spherical_coordinates>
+
+    <light type="directional" name="sun">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.2 0.2 0.8 1</diffuse>
+      <specular>0 0 0.3 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- Bounding box with sea surface -->
+    <include>
+      <uri>model://sp_swimming_pool</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sauvc_orange_flare</uri>
+      <pose>6 -4 -2 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sauvc_gate</uri>
+      <pose>6 -.6 -2 0 0 1.2</pose>
+    </include>
+
+    <include>
+      <name>yellow_flare</name>
+      <uri>model://sauvc_yellow_flare</uri>
+      <pose>12 6 -2 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>blue_flare</name>
+      <uri>model://sauvc_blue_flare</uri>
+      <pose>12 4.5 -2 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>red_flare</name>
+      <uri>model://sauvc_red_flare</uri>
+      <pose>12 2.5 -2 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>yellow_flare_ball</name>
+      <uri>model://dropper_marker</uri>
+      <pose>12 6 -1.15 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>blue_flare_ball</name>
+      <uri>model://dropper_marker</uri>
+      <pose>12 4.5 -1.15 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>red_flare_ball</name>
+      <uri>model://dropper_marker</uri>
+      <pose>12 2.5 -1.15 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sauvc_target_acquisition_area</uri>
+      <pose>6  9 -1.95 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>qualification_gate_1</name>
+      <uri>model://sauvc_qualification_gate</uri>
+      <pose>-15 8.5 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>qualification_gate_2</name>
+      <uri>model://sauvc_qualification_gate</uri>
+      <pose>-15 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>qualification_gate_3</name>
+      <uri>model://sauvc_qualification_gate</uri>
+      <pose>-15 -8.5 0 0 0 0</pose>
+    </include>
+    
+
+    <!-- <model name="water_plane">
+      <static>true</static>
+      <link name="link">
+        <visual name="water_plane">
+          <geometry>
+            <plane>
+              <size>50 25</size>
+              <normal>0 0 1</normal>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0 0 1 0.5</ambient>
+            <diffuse>0 0 1 0.5</diffuse>
+            <specular>0 0 1 0.5</specular>
+          </material>
+        </visual>
+      </link>
+    </model> -->
+    <include>
+      <name>surface</name>
+			<uri>model://pool_waves</uri>
+      <pose>0 0 0 0 0 0</pose>
+		</include>
+
+    <!-- This invisible plane helps with orbiting the camera, especially at large scales -->
+    <plugin
+      filename="gz-sim-buoyancy-system"
+      name="gz::sim::systems::Buoyancy">
+      <graded_buoyancy>
+        <default_density>1000</default_density>
+        <density_change>
+          <above_depth>0</above_depth>
+          <density>1</density>
+        </density_change>
+        <enable>auv4::buoyancy_link</enable>
+      </graded_buoyancy>
+      <!-- <enable>auv4::buoyancy_link</enable> -->
+    </plugin>
+
+    <plugin
+      filename="gz-sim-dvl-system"
+      name="gz::sim::systems::DopplerVelocityLogSystem">
+    </plugin>
+    <plugin
+      filename="dave_ros_gz_plugins/libDVLBridge.so"
+      name="dave_ros_gz_plugins::DVLBridge">
+    </plugin>
+    <!-- Uncomment for particle effect
+      Requires ParticleEmitter2 in gz-sim 4.8.0, which will be copied
+      to ParticleEmitter in Gazebo G.
+      See https://github.com/gazebosim/gz-sim/pull/730 -->
+    <!-- <include>
+      <pose>-5 0 0 0 0 0</pose>
+      <uri>turbidity_generator</uri>
+    </include> -->
+
+    <gui fullscreen="0">
+
+      <!-- 3D scene -->
+      <plugin filename="MinimalScene" name="3D View">
+        <gz-gui>
+          <title>3D View</title>
+          <property type="bool" key="showTitleBar">false</property>
+          <property type="string" key="state">docked</property>
+        </gz-gui>
+
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.4 0.4 0.4</ambient_light>
+        <background_color>0.8 0.8 0.8</background_color>
+        <camera_pose>0 0 20 0 0.29 -0.715</camera_pose>
+        <camera_clip>
+          <near>0.25</near>
+          <far>2500</far>
+        </camera_clip>
+      </plugin>
+
+      <!-- Plugins that add functionality to the scene -->
+      <plugin filename="EntityContextMenuPlugin" name="Entity context menu">
+        <gz-gui>
+          <property key="state" type="string">floating</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+      <plugin filename="GzSceneManager" name="Scene Manager">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+      <plugin filename="InteractiveViewControl" name="Interactive view control">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+      <plugin filename="CameraTracking" name="Camera Tracking">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+      <plugin filename="MarkerManager" name="Marker manager">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+      <plugin filename="SelectEntities" name="Select Entities">
+        <gz-gui>
+          <anchors target="Select entities">
+            <line own="right" target="right"/>
+            <line own="top" target="top"/>
+          </anchors>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+      <plugin filename="VisualizationCapabilities" name="Visualization Capabilities">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+
+      <plugin filename="Spawn" name="Spawn Entities">
+        <gz-gui>
+          <anchors target="Select entities">
+            <line own="right" target="right"/>
+            <line own="top" target="top"/>
+          </anchors>
+          <property key="resizable" type="bool">false</property>
+          <property key="width" type="double">5</property>
+          <property key="height" type="double">5</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+        </gz-gui>
+      </plugin>
+
+      <!-- World control -->
+      <plugin filename="WorldControl" name="World control">
+        <gz-gui>
+          <title>World control</title>
+          <property type="bool" key="showTitleBar">false</property>
+          <property type="bool" key="resizable">false</property>
+          <property type="double" key="height">72</property>
+          <property type="double" key="width">121</property>
+          <property type="double" key="z">1</property>
+
+          <property type="string" key="state">floating</property>
+          <anchors target="3D View">
+            <line own="left" target="left"/>
+            <line own="bottom" target="bottom"/>
+          </anchors>
+        </gz-gui>
+
+        <play_pause>true</play_pause>
+        <step>true</step>
+        <start_paused>true</start_paused>
+        <use_event>true</use_event>
+
+      </plugin>
+
+      <!-- World statistics -->
+      <plugin filename="WorldStats" name="World stats">
+        <gz-gui>
+          <title>World stats</title>
+          <property type="bool" key="showTitleBar">false</property>
+          <property type="bool" key="resizable">false</property>
+          <property type="double" key="height">110</property>
+          <property type="double" key="width">290</property>
+          <property type="double" key="z">1</property>
+
+          <property type="string" key="state">floating</property>
+          <anchors target="3D View">
+            <line own="right" target="right"/>
+            <line own="bottom" target="bottom"/>
+          </anchors>
+        </gz-gui>
+
+        <sim_time>true</sim_time>
+        <real_time>true</real_time>
+        <real_time_factor>true</real_time_factor>
+        <iterations>true</iterations>
+      </plugin>
+
+      <!-- Insert simple shapes -->
+      <plugin filename="Shapes" name="Shapes">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="x" type="double">0</property>
+          <property key="y" type="double">0</property>
+          <property key="width" type="double">250</property>
+          <property key="height" type="double">50</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+          <property key="cardBackground" type="string">#666666</property>
+        </gz-gui>
+      </plugin>
+
+      <!-- Insert lights -->
+
+    <!-- Global light source -->
+    <light type="directional" name="sun1">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 20 0 0 0</pose>
+      <diffuse>0.2 0.2 0.8 1</diffuse>
+      <specular>0 0 0.3 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.0 0.1 -0.9</direction>
+    </light>
+<!-- 
+    <light type="directional" name="sun_diffuse">
+        <cast_shadows>false</cast_shadows>
+      <pose>-0 0 -150 0 0 0</pose>
+      <diffuse>0.6 0.6 0.6 1</diffuse>
+      <specular>0 0 0 1</specular>
+      <direction>-0.3 -0.3 -1</direction>
+      <cast_shadows>false</cast_shadows>
+    </light>
+
+    <light type="directional" name="sun_diffuse_1">
+      <pose>-100 0 -20 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>1 1 1 1</specular>
+      <direction>-1 -1 0</direction>
+      <cast_shadows>false</cast_shadows>
+    </light>
+
+    <light type="directional" name="sun_diffuse_2">
+      <pose>-150 -130 100 0 0 0</pose>
+      <diffuse>0.6 0.6 0.6 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>0.5 0.5 -1</direction>
+      <cast_shadows>false</cast_shadows>
+    </light> -->
+
+		<!-- Virtual north, east and down frame -->
+		<include>
+			<uri>
+				https://fuel.gazebosim.org/1.0/hmoyen/models/North East Down frame
+			</uri>
+			<pose>0 0 0 0 0 0</pose>
+		</include>
+
+      <!-- Translate / rotate -->
+      <plugin filename="TransformControl" name="Transform control">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="x" type="double">0</property>
+          <property key="y" type="double">50</property>
+          <property key="width" type="double">250</property>
+          <property key="height" type="double">50</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+          <property key="cardBackground" type="string">#777777</property>
+        </gz-gui>
+
+        <!-- disable legacy features used to connect this plugin to GzScene3D -->
+        <legacy>false</legacy>
+      </plugin>
+
+      <!-- Screenshot -->
+      <plugin filename="Screenshot" name="Screenshot">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="x" type="double">250</property>
+          <property key="y" type="double">50</property>
+          <property key="width" type="double">50</property>
+          <property key="height" type="double">50</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+          <property key="cardBackground" type="string">#777777</property>
+        </gz-gui>
+      </plugin>
+
+      <!-- Video recorder -->
+      <plugin filename="VideoRecorder" name="VideoRecorder">
+        <gz-gui>
+          <property key="resizable" type="bool">false</property>
+          <property key="x" type="double">300</property>
+          <property key="y" type="double">50</property>
+          <property key="width" type="double">50</property>
+          <property key="height" type="double">50</property>
+          <property key="state" type="string">floating</property>
+          <property key="showTitleBar" type="bool">false</property>
+          <property key="cardBackground" type="string">#777777</property>
+        </gz-gui>
+
+        <record_video>
+          <use_sim_time>true</use_sim_time>
+          <lockstep>true</lockstep>
+          <bitrate>4000000</bitrate>
+        </record_video>
+
+        <!-- disable legacy features used to connect this plugin to GzScene3D -->
+        <legacy>false</legacy>
+      </plugin>
+
+      <!-- Inspector -->
+      <plugin filename="ComponentInspector" name="Component inspector">
+        <gz-gui>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+      </plugin>
+
+      <!-- Entity tree -->
+      <plugin filename="EntityTree" name="Entity tree">
+        <gz-gui>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+      </plugin>
+
+      <!-- View angle -->
+      <plugin filename="ViewAngle" name="View angle">
+        <gz-gui>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+
+        <!-- disable legacy features used to connect this plugin to GzScene3D -->
+        <legacy>false</legacy>
+      </plugin>
+      <plugin filename="Plot3D" name="Plot 3D">
+        <gz-gui>
+          <title>Plot 3D path</title>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+        <entity_name>bbauv4</entity_name>
+        <color>0 0 1</color>
+        <maximum_points>10000</maximum_points>
+        <minimum_distance>0.5</minimum_distance>
+      </plugin>
+      <plugin filename="GridConfig" name="Grid config">
+        <gz-gui>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+        <insert>
+          <!-- 300 km x 300 km -->
+          <cell_count>6</cell_count>
+          <vertical_cell_count>0</vertical_cell_count>
+          <!-- 50 km -->
+          <cell_length>50000</cell_length>
+          <pose>0 100000 0  0 0 0.32</pose>
+          <color>0 1 0 1</color>
+        </insert>
+        <insert>
+          <!-- 0.1 km x 0.1 km -->
+          <cell_count>100</cell_count>
+          <vertical_cell_count>0</vertical_cell_count>
+          <!-- 1 m -->
+          <cell_length>1</cell_length>
+          <pose>0 0 0  0 0 0</pose>
+          <color>0.5 0.5 0.5 1</color>
+        </insert>
+      </plugin>
+    </gui>
+
+  </world>
+</sdf>
