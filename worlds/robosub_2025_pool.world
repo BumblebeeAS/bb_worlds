@@ -128,11 +128,6 @@
     </include>
 
     <include>
-      <uri>model://sauvc_gate</uri>
-      <pose>6 -.6 -2 0 0 1.2</pose>
-    </include>
-
-    <include>
       <name>yellow_flare</name>
       <uri>model://sauvc_yellow_flare</uri>
       <pose>12 6 -2 0 0 0</pose>
@@ -174,24 +169,6 @@
     </include>
 
     <include>
-      <name>qualification_gate_1</name>
-      <uri>model://sauvc_qualification_gate</uri>
-      <pose>-15 8.5 0 0 0 0</pose>
-    </include>
-
-    <include>
-      <name>qualification_gate_2</name>
-      <uri>model://sauvc_qualification_gate</uri>
-      <pose>-15 0 0 0 0 0</pose>
-    </include>
-
-    <include>
-      <name>qualification_gate_3</name>
-      <uri>model://sauvc_qualification_gate</uri>
-      <pose>-15 -8.5 0 0 0 0</pose>
-    </include>
-
-    <include>
       <name>surface</name>
 			<uri>model://pool_waves</uri>
       <pose>0 0 0 0 0 0</pose>
@@ -207,6 +184,12 @@
       <name>torpedo_panel_v2</name>
       <uri>model://robosub25/torpedo_panel_v2</uri>
       <pose>3 0 -2 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>gate</name>
+      <uri>model://robosub25/gate</uri>
+      <pose>6 0 -2 0 0 0</pose>
     </include>
 
     <!-- <plugin

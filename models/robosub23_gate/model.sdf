@@ -8,7 +8,7 @@
         <pose>0 0 0 1.57079632679 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robosub23_gate/gate.obj</uri>
+            <uri>model://robosub_gate_base/gate.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -16,7 +16,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robosub23_gate/gate.stl</uri>
+            <uri>model://robosub_gate_base/gate.stl</uri>
           </mesh>
         </geometry>
       </collision>

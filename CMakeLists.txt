@@ -41,6 +41,7 @@ install(TARGETS
 install(DIRECTORY
   # config
   launch
+  media
   models
   worlds
   DESTINATION share/${PROJECT_NAME})
