@@ -123,18 +123,8 @@
     </include>
 
     <include>
-      <uri>model://sauvc_orange_flare</uri>
-      <pose>6 -4 -2 0 0 0</pose>
-    </include>
-
-    <include>
       <uri>model://robosub25/bin</uri>
       <pose>-6 4.5 -2 0 0 0</pose>
-    </include>
-
-    <include>
-      <uri>model://sauvc_target_acquisition_area</uri>
-      <pose>6  9 -1.95 0 0 0</pose>
     </include>
 
     <include>
@@ -159,6 +149,12 @@
       <name>gate</name>
       <uri>model://robosub25/gate</uri>
       <pose>6 0 -2 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>slalom</name>
+      <uri>model://robosub25/slalom</uri>
+      <pose>6 3 0 0 0 0</pose>
     </include>
 
     <!-- <plugin
