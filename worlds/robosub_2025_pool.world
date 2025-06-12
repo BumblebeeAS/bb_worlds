@@ -154,7 +154,43 @@
     <include>
       <name>slalom</name>
       <uri>model://robosub25/slalom</uri>
-      <pose>6 3 0 0 0 0</pose>
+      <pose>12 3 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>collection_table</name>
+      <uri>model://robosub25/collection_table</uri>
+      <pose>-6 -4.5 -1.0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>ladle_1</name>
+      <uri>model://robosub25/ladle</uri>
+      <pose>-6 -4.5 -1.0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>ladle_2</name>
+      <uri>model://robosub25/ladle</uri>
+      <pose>-5.95 -4.45 -1.0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <name>bottle_1</name>
+      <uri>model://robosub25/bottle</uri>
+      <pose>-6.05 -4.55 -1.0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <name>bottle_2</name>
+      <uri>model://robosub25/bottle</uri>
+      <pose>-5.85 -4.60 -1.0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>octagon</name>
+      <uri>model://octagon</uri>
+      <pose>-6 -4.5 0 0 0 0</pose>
     </include>
 
     <!-- <plugin
