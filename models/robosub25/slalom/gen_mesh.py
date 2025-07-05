@@ -12,7 +12,7 @@ pole_length = 0.9
 channel_width = 1.5
 
 # Adjust these to change the degree of winding
-y_offset = 1.0
+y_offset = 2.0
 x_offsets = [0, -0.5, 0.5]
 
 # Delete default objects
