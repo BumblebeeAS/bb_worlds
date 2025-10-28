@@ -1,15 +1,8 @@
 cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
 project(bb_worlds)
-find_package(ament_cmake REQUIRED)
 
-find_package(xacro REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(geometry_msgs REQUIRED)
-find_package(sensor_msgs REQUIRED)
-find_package(dave_interfaces REQUIRED)
-find_package(tf2 REQUIRED)
-find_package(tf2_msgs REQUIRED)
-find_package(tf2_ros REQUIRED)
+find_package(ament_cmake_auto REQUIRED)
+ament_auto_find_build_dependencies()
 #============================================================================
 # Hooks
 ament_environment_hooks(
