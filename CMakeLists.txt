@@ -15,6 +15,9 @@ ament_python_install_package(
   PACKAGE_DIR src/robotx_gz
 )
 
+# Install bb_worlds Python package
+ament_python_install_package(${PROJECT_NAME})
+
 add_executable(pose_tf_broadcaster src/pose_tf_broadcaster.cc)
 ament_target_dependencies(pose_tf_broadcaster
   geometry_msgs
@@ -38,5 +41,9 @@ install(DIRECTORY
   models
   worlds
   DESTINATION share/${PROJECT_NAME})
+
+install(PROGRAMS
+  ${PROJECT_NAME}/vis_marker_publisher_node.py
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
