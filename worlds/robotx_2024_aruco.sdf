@@ -108,5 +108,11 @@
       <uri>model://robotx24/robonation_N</uri>
       <pose>2 2 0.001 0 0 0</pose>
     </include>
+
+    <include>
+      <name>helipad</name>
+      <uri>model://robotx24/helipad</uri>
+      <pose>5 5 0.001 0 0 0</pose>
+    </include>
   </world>
 </sdf>
