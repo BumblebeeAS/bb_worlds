@@ -101,14 +101,6 @@
       <cast_shadows>false</cast_shadows>
     </light>
 
-    <!-- Virtual north, east and down frame -->
-    <include>
-        <uri>
-            https://fuel.gazebosim.org/1.0/hmoyen/models/North East Down frame
-        </uri>
-        <pose>0 0 0 0 0 0</pose>
-    </include>
-
     <!-- Sea surface -->
     <include>
       <uri>
@@ -120,6 +112,13 @@
     <include>
       <uri>https://fuel.gazebosim.org/1.0/hmoyen/models/Sand Heightmap</uri>
       <pose>0 0 -95 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>
+        model://robotx_2026_singapore_river/sgriver
+      </uri>
+      <pose degrees="true">0 0 33 90 0 0</pose>
     </include>
 
 

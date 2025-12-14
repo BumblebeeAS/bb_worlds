@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<sdf version="1.11">
+  <model name="sgriver">
+    <static>true</static>
+    <link name="link">
+      <visual name="pool">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <!-- The URI should refer to the 3D mesh. The "model:"
+                URI scheme indicates that the we are referencing a Gazebo
+                model. -->
+            <uri>model://robotx_2026_singapore_river/sgriver/sgriver.glb</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
