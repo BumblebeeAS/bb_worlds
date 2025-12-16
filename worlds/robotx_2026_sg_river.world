@@ -62,11 +62,6 @@
       <elevation>0.0</elevation>
       <heading_deg>0.0</heading_deg>
     </spherical_coordinates>
-    <plugin
-        filename="gz-sim-navsat-system"
-        name="gz::sim::systems::NavSat">
-    </plugin>
-
 
     <!-- Global light source -->
     <light type="directional" name="sun1">
