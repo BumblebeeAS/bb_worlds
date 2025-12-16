@@ -3,9 +3,10 @@ import numpy as np
 from PIL import Image
 
 # constants
-px_per_in = 50
+px_per_in = 200
 square_in = 80
 size = square_in * px_per_in
+circle_thickness = int(0.5 * px_per_in)
 
 # Create image using numpy array for cv2
 img = np.full((size, size, 3), [211, 211, 211], dtype=np.uint8)  # lightgray RGB
@@ -19,7 +20,7 @@ cx, cy = size // 2, size // 2
 # draw circles using cv2 for crisp edges
 for d in [d_large, d_mid]:
     r = d // 2
-    cv2.circle(img, (cx, cy), r, (0, 0, 0), 25, lineType=cv2.LINE_AA)
+    cv2.circle(img, (cx, cy), r, (0, 0, 0), circle_thickness, lineType=cv2.LINE_AA)
 
 # load logo
 logo_pil = Image.open("robonation logo-black-icon_cropped.png").convert("RGBA")
