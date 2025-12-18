@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 # constants
-px_per_in = 200
+px_per_in = 50
 square_in = 80
 size = square_in * px_per_in
 circle_thickness = int(0.5 * px_per_in)
