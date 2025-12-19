@@ -1,0 +1,11 @@
+/**/aruco/vis_marker_publisher_node:
+  ros__parameters:
+    mesh_resource: package://bb_worlds/models/robotx24/arucotag_v3/model.dae
+    frame_id: aruco_board
+    output_marker_topic: marker
+/**/helipad/vis_marker_publisher_node:
+  ros__parameters:
+    mesh_resource: package://bb_worlds/models/robotx24/helipad/helipad.glb
+    frame_id: helipad
+    output_marker_topic: marker
+    mesh_roll_pitch_yaw: [-1.57079632679, 0.0, 0.0]

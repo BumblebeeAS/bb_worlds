@@ -35,7 +35,7 @@ install(TARGETS
 #============================================================================
 # Resources
 install(DIRECTORY
-  # config
+  config
   launch
   media
   models
