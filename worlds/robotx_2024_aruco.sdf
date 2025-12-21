@@ -114,5 +114,23 @@
       <uri>model://robotx24/helipad</uri>
       <pose>5 5 0.001 0 0 0</pose>
     </include>
+
+    <include>
+      <name>red_tin</name>
+      <uri>model://robotx24/tins/red_tin</uri>
+      <pose>5.0 5.5 0.065 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>green_tin</name>
+      <uri>model://robotx24/tins/green_tin</uri>
+      <pose>5.433 4.75 0.065 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>blue_tin</name>
+      <uri>model://robotx24/tins/blue_tin</uri>
+      <pose>4.567 4.75 0.065 0 0 0</pose>
+    </include>
   </world>
 </sdf>
