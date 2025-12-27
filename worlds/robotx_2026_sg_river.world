@@ -104,9 +104,12 @@
 
     <!-- Sea surface -->
     <include>
-      <uri>
-        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water
-      </uri>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
+      <experimental:params>
+        <visual element_id="link::visual">
+          <visibility_flags action="add">8</visibility_flags>
+        </visual>
+      </experimental:params>
     </include>
 
     <!-- Heightmap -->
