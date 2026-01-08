@@ -17,7 +17,7 @@
 <!-- Modified for different Gazebo GUI camera angle -->
 
 <sdf version="1.4">
-  <world name="robotx_2026_singapore_river">
+  <world name="robotx_2026_sg_river">
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type="adiabatic"/>
@@ -94,14 +94,6 @@
       <cast_shadows>false</cast_shadows>
     </light>
 
-    <!-- Virtual north, east and down frame -->
-    <include>
-        <uri>
-            https://fuel.gazebosim.org/1.0/hmoyen/models/North East Down frame
-        </uri>
-        <pose>0 0 0 0 0 0</pose>
-    </include>
-
     <!-- Sea surface -->
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
@@ -118,11 +110,16 @@
       <pose>0 0 -95 0 0 0</pose>
     </include>
 
+    <!-- SG River -->
+    <!-- <include> -->
+    <!--   <uri>model://robotx26/sg_river</uri> -->
+    <!-- </include> -->
+
     <plugin
       filename="gz-sim-buoyancy-system"
       name="gz::sim::systems::Buoyancy">
       <graded_buoyancy>
-        <default_density>1025</default_density>
+        <default_density>1000</default_density>
         <density_change>
           <above_depth>0</above_depth>
           <density>1</density>
