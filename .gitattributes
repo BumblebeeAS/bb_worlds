@@ -2,3 +2,13 @@
 *.glb filter=lfs diff=lfs merge=lfs -text
 *.dae filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+models/robosub26/collection_table filter=lfs diff=lfs merge=lfs -text
+models/robosub26/gate filter=lfs diff=lfs merge=lfs -text
+models/robosub26/milkcrate filter=lfs diff=lfs merge=lfs -text
+models/robosub26/milkcrate_blood filter=lfs diff=lfs merge=lfs -text
+models/robosub26/slalom filter=lfs diff=lfs merge=lfs -text
+models/robosub26/torpedo_panel_base filter=lfs diff=lfs merge=lfs -text
+models/robosub26/torpedo_panel_v2 filter=lfs diff=lfs merge=lfs -text
+models/robosub26/milkcrate_fire filter=lfs diff=lfs merge=lfs -text
+models/robosub26/octagon filter=lfs diff=lfs merge=lfs -text
+models/robosub26/torpedo_panel_v1 filter=lfs diff=lfs merge=lfs -text
