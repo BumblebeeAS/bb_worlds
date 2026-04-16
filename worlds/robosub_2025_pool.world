@@ -21,9 +21,9 @@
     <scene>
       <ambient>0.01 0.01 0.01 1.0</ambient>
       <sky>
-        <clouds>
+        <!-- <clouds>
           <speed>12</speed>
-        </clouds>
+        </clouds> -->
       </sky>
       <shadows>1</shadows>
     </scene>
