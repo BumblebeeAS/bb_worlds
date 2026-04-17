@@ -165,15 +165,16 @@
     <include>
       <name>torpedo_panel_v1</name>
       <uri>model://robosub26/torpedo_panel_v1</uri>
-      <pose>1 0 -2 0 0 0</pose>
+      <pose>3 0 -2 0 0 1.57</pose>
     </include>
 
-    <include>
-      <name>torpedo_panel_v2</name>
-      <uri>model://robosub26/torpedo_panel_v2</uri>
-      <pose>3 0 -2 0 0 0</pose>
-    </include>
-
+    <!--
+        <include>
+        <name>torpedo_panel_v2</name>
+        <uri>model://robosub26/torpedo_panel_v2</uri>
+        <pose>3 0 -2 0 0 1.57</pose>
+        </include>
+    -->
     <include>
       <name>gate</name>
       <uri>model://robosub26/gate</uri>
