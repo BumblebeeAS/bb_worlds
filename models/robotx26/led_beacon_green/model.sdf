@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='led_beacon_green'>
+    <static>true</static>
+    <link name='led'>
+      <visual name='led_visual'>
+        <geometry>
+          <cylinder><radius>0.055</radius><length>0.131</length></cylinder>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 1 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
