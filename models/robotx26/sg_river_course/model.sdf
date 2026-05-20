@@ -6,12 +6,6 @@
     <!-- Singapore River terrain -->
     <include>
       <uri>https://fuel.gazebosim.org/1.0/monkescripts/models/Singapore River (Cropped out for Robot X 2026)</uri>
-      <pose>195.866 173.723 0.0 0 0 0</pose>
-    </include>
-
-    <!-- Sea surface -->
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
     </include>
 
     <!-- Platform collision plane at world origin (for drone landing) -->
@@ -33,48 +27,6 @@
         </geometry>
       </collision>
     </link>
-
-    <!-- Visual piers (8 stacked along jetty line) -->
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_0</name>
-      <pose>93.469 -75.074 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_1</name>
-      <pose>110.589 -85.394 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_2</name>
-      <pose>127.709 -95.714 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_3</name>
-      <pose>144.829 -106.034 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_4</name>
-      <pose>161.949 -116.354 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_5</name>
-      <pose>76.349 -64.754 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_6</name>
-      <pose>59.229 -54.434 -5 0 0 1.0251</pose>
-    </include>
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
-      <name>pier_7</name>
-      <pose>42.109 -44.114 -5 0 0 1.0251</pose>
-    </include>
 
   </model>
 </sdf>
