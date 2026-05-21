@@ -320,80 +320,60 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
-    <!-- Singapore River terrain (offset so platform is at world origin) -->
+    <!-- Singapore River terrain + jetty/platform collision (offset so platform is at world origin) -->
     <include>
-      <uri>model://robotx26/sg_river</uri>
+      <uri>model://robotx26/sg_river_course</uri>
       <pose>195.866 173.723 0.0 0 0 0</pose>
     </include>
 
-    <!-- Sea surface -->
+    <!-- Sea surface. NOTE: Coast Water uses a ShaderParam plugin whose shader
+         file paths only resolve when included directly at the world level
+         (nesting it inside another model causes a segfault — paths resolve
+         against the outer model dir instead of the Fuel cache). -->
     <include>
-      <uri>
-        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water
-      </uri>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
     </include>
 
-    <!-- Jetty — stacked piers along the plank line (158m long, angled -30.8 deg) -->
-    <!-- Collision modelled as single box matching original plank dimensions -->
-    <model name="jetty_collision">
-      <static>true</static>
-      <link name="collision_link">
-        <pose>93.469 -75.074 -0.5 0 0 -0.5457</pose>
-        <collision name="collision">
-          <geometry>
-            <box><size>158.633 6.5 3</size></box>
-          </geometry>
-        </collision>
-      </link>
-    </model>
-
-    <!-- Visual piers -->
+    <!-- Visual piers along the jetty (same reason as above — material refs
+         like pier_diffuse.jpg only resolve at world-level include). -->
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_0</name>
-      <static>true</static>
       <pose>93.469 -75.074 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_1</name>
-      <static>true</static>
       <pose>110.589 -85.394 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_2</name>
-      <static>true</static>
       <pose>127.709 -95.714 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_3</name>
-      <static>true</static>
       <pose>144.829 -106.034 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_4</name>
-      <static>true</static>
       <pose>161.949 -116.354 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_5</name>
-      <static>true</static>
       <pose>76.349 -64.754 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_6</name>
-      <static>true</static>
       <pose>59.229 -54.434 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
       <name>pier_7</name>
-      <static>true</static>
       <pose>42.109 -44.114 -5 0 0 1.0251</pose>
     </include>
 
