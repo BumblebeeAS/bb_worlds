@@ -52,10 +52,7 @@
       filename="gz-sim-dvl-system"
       name="gz::sim::systems::DopplerVelocityLogSystem">
     </plugin>
-    <plugin
-      filename="multibeam_sonar_system"
-      name="custom::MultibeamSonarSystem">
-    </plugin>
+    <!-- multibeam_sonar_system requires CUDA; omitted for CPU-only builds -->
 
     <!-- Origin placed at Singapore Poly Swimming Pool  -->
     <spherical_coordinates>

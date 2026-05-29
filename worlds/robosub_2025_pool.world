@@ -49,20 +49,45 @@
       <render_engine>ogre2</render_engine>
     </plugin>
     <plugin
+      filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+    <plugin
+      filename="gz-sim-magnetometer-system"
+      name="gz::sim::systems::Magnetometer">
+    </plugin>
+    <plugin
+      filename="gz-sim-forcetorque-system"
+      name="gz::sim::systems::ForceTorque">
+    </plugin>
+    <plugin
+      filename="gz-sim-particle-emitter-system"
+      name="gz::sim::systems::ParticleEmitter">
+    </plugin>
+    <plugin
+      filename="gz-sim-contact-system"
+      name="gz::sim::systems::Contact">
+    </plugin>
+    <plugin
+      filename="gz-sim-navsat-system"
+      name="gz::sim::systems::NavSat">
+    </plugin>
+    <plugin
       filename="gz-sim-dvl-system"
       name="gz::sim::systems::DopplerVelocityLogSystem">
     </plugin>
     <plugin
-      filename="multibeam_sonar_system"
-      name="custom::MultibeamSonarSystem">
+      filename="gz-sim-air-pressure-system"
+      name="gz::sim::systems::AirPressure">
     </plugin>
+    <!-- multibeam_sonar_system requires CUDA; omitted for CPU-only builds -->
 
     <!-- Origin placed at Singapore Poly Swimming Pool  -->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <world_frame_orientation>ENU</world_frame_orientation>
-      <latitude_deg>1.309562</latitude_deg>
-      <longitude_deg>103.7745783</longitude_deg>
+      <latitude_deg>33.701111</latitude_deg>
+      <longitude_deg>-117.780833</longitude_deg>
       <elevation>0.0</elevation>
       <heading_deg>0.0</heading_deg>
     </spherical_coordinates>
