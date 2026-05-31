@@ -333,46 +333,47 @@
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
     </include>
+      
 
     <!-- Visual piers along the jetty (same reason as above — material refs
          like pier_diffuse.jpg only resolve at world-level include). -->
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_0</name>
       <pose>93.469 -75.074 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_1</name>
       <pose>110.589 -85.394 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_2</name>
       <pose>127.709 -95.714 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_3</name>
       <pose>144.829 -106.034 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_4</name>
       <pose>161.949 -116.354 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_5</name>
       <pose>76.349 -64.754 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_6</name>
       <pose>59.229 -54.434 -5 0 0 1.0251</pose>
     </include>
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pier</uri>
+      <uri>model://pier</uri>
       <name>pier_7</name>
       <pose>42.109 -44.114 -5 0 0 1.0251</pose>
     </include>
