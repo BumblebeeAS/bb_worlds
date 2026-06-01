@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="dock_led_3_red">
+    <static>true</static>
+    <link name="dock_led_3_red_link">
+      <visual name="dock_led_3_red_visual">
+        <pose>-0.254 2.032 0.508 1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robotx26/docking_task/led/red_led.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.1 0.08 1</ambient>
+          <diffuse>0.7686 0.2078 0.1529 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0.5 0.05 0.03 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

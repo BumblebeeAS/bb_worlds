@@ -335,6 +335,47 @@
     </include>
       
 
+
+    <!-- task 3 docking -->
+    <include>
+      <name>docking_task</name>
+      <uri>model://robotx26/docking_task</uri>
+      <pose>108 -115 0 0 0 0</pose>
+    </include>
+
+    <!-- Switchable docking LEDs (teleported by dock_led_driver). -->
+    <include>
+      <name>dock_led_1_red</name>
+      <uri>model://robotx26/dock_led_1_red</uri>
+      <pose>108 -115 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>dock_led_1_green</name>
+      <uri>model://robotx26/dock_led_1_green</uri>
+      <pose>108 -115 -1000 0 0 0</pose>
+    </include>
+    <include>
+      <name>dock_led_2_red</name>
+      <uri>model://robotx26/dock_led_2_red</uri>
+      <pose>108 -115 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>dock_led_2_green</name>
+      <uri>model://robotx26/dock_led_2_green</uri>
+      <pose>108 -115 -1000 0 0 0</pose>
+    </include>
+    <include>
+      <name>dock_led_3_red</name>
+      <uri>model://robotx26/dock_led_3_red</uri>
+      <pose>108 -115 -1000 0 0 0</pose>
+    </include>
+    <include>
+      <name>dock_led_3_green</name>
+      <uri>model://robotx26/dock_led_3_green</uri>
+      <pose>108 -115 0 0 0 0</pose>
+    </include>
+
+    
     <!-- Visual piers along the jetty (same reason as above — material refs
          like pier_diffuse.jpg only resolve at world-level include). -->
     <include>
