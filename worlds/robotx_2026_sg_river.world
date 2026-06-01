@@ -388,30 +388,43 @@
       <pose>150 -115 0 0 0 0</pose>
     </include>
 
-    <!-- RobotX 2026 Task 1 (Safe Passage) — LED beacon.
-         Static (with collision). Placed ~10 m N of the ASV spawn, in visible
-         line-of-sight. The three colored LED indicators are separate models
-         (included at z=-1000) that led_beacon_driver teleports onto the buoy
-         top via gz service /world/<w>/set_pose. -->
+    <!-- RobotX 2026 Task 1 (Safe Passage) — LED buoy gate field.
+         Each buoy is the same static safe_passage_buoy model; the LedPlugin
+         drives its color/flash in-sim (visual-only emissive, no per-frame
+         cost). Every instance gets its own control topic
+         /led_<name>/change_led_mode (gz.msgs.StringMsg), bridged to ROS 2 and
+         driven by the dashboard via led_beacon_driver. To add/remove buoys,
+         just edit this list (keep names unique). Poses form a short corridor
+         near the ASV spawn (135.7, -126.7) — tune to the desired course. -->
     <include>
-      <name>led_beacon</name>
-      <uri>model://robotx26/led_beacon</uri>
-      <pose>125 -115 0 0 0 0</pose>
+      <name>sp_entry</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>120 -110 0 0 0 0</pose>
     </include>
     <include>
-      <name>led_beacon_red</name>
-      <uri>model://robotx26/led_beacon_red</uri>
-      <pose>125 -115 -1000 0 0 0</pose>
+      <name>sp_gate1_port</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>125 -112 0 0 0 0</pose>
     </include>
     <include>
-      <name>led_beacon_green</name>
-      <uri>model://robotx26/led_beacon_green</uri>
-      <pose>125 -115 -1000 0 0 0</pose>
+      <name>sp_gate1_star</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>126 -117 0 0 0 0</pose>
     </include>
     <include>
-      <name>led_beacon_blue</name>
-      <uri>model://robotx26/led_beacon_blue</uri>
-      <pose>125 -115 -1000 0 0 0</pose>
+      <name>sp_gate2_port</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>131 -114 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>sp_gate2_star</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>132 -119 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>sp_exit</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>137 -116 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
