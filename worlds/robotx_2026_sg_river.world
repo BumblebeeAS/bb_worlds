@@ -345,7 +345,7 @@
 
 
     <!-- task 3 docking -->
-    <!-- led change is done by ros2 service call  -->
+    <!-- led change is done by ros2 service call on /robotx/docking_led/choice. rgr represents red, green, red etc -->
     <include>
       <name>docking_task</name>
       <uri>model://robotx26/docking_task</uri>
