@@ -320,10 +320,18 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
+
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/hmoyen/models/Sand Heightmap
+      </uri>
+      <pose>195.866 173.723 -35 0 0 0</pose>
+
+      </include>
     <!-- Singapore River terrain + jetty/platform collision (offset so platform is at world origin) -->
     <include>
       <uri>model://robotx26/sg_river_course</uri>
-      <pose>195.866 173.723 0.0 0 0 0</pose>
+      <pose>108 -115 0 0 0 0</pose>
     </include>
 
     <!-- Sea surface. NOTE: Coast Water uses a ShaderParam plugin whose shader
@@ -337,43 +345,13 @@
 
 
     <!-- task 3 docking -->
+    <!-- led change is done by ros2 service call  -->
     <include>
       <name>docking_task</name>
       <uri>model://robotx26/docking_task</uri>
       <pose>108 -115 0 0 0 0</pose>
     </include>
 
-    <!-- Switchable docking LEDs (teleported by dock_led_driver). -->
-    <include>
-      <name>dock_led_1_red</name>
-      <uri>model://robotx26/dock_led_1_red</uri>
-      <pose>108 -115 0 0 0 0</pose>
-    </include>
-    <include>
-      <name>dock_led_1_green</name>
-      <uri>model://robotx26/dock_led_1_green</uri>
-      <pose>108 -115 -1000 0 0 0</pose>
-    </include>
-    <include>
-      <name>dock_led_2_red</name>
-      <uri>model://robotx26/dock_led_2_red</uri>
-      <pose>108 -115 0 0 0 0</pose>
-    </include>
-    <include>
-      <name>dock_led_2_green</name>
-      <uri>model://robotx26/dock_led_2_green</uri>
-      <pose>108 -115 -1000 0 0 0</pose>
-    </include>
-    <include>
-      <name>dock_led_3_red</name>
-      <uri>model://robotx26/dock_led_3_red</uri>
-      <pose>108 -115 -1000 0 0 0</pose>
-    </include>
-    <include>
-      <name>dock_led_3_green</name>
-      <uri>model://robotx26/dock_led_3_green</uri>
-      <pose>108 -115 0 0 0 0</pose>
-    </include>
 
     
     <!-- Visual piers along the jetty (same reason as above — material refs

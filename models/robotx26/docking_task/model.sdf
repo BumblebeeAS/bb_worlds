@@ -2,6 +2,7 @@
 <sdf version='1.9'>
   <model name='bounded_dock'>
     <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
 
     <link name='docking_link'>
       <inertial>
@@ -16,6 +17,7 @@
           <izz>232.86831224580979</izz>
         </inertia>
       </inertial>
+
       <collision name='docking_link_collision'>
         <pose>0 0 0 1.5700000000000001 0 0</pose>
         <geometry>
@@ -25,6 +27,7 @@
           </mesh>
         </geometry>
       </collision>
+
       <visual name='docking_link_visual'>
         <pose>0 0 0 1.5700000000000001 0 0</pose>
         <geometry>
@@ -33,26 +36,26 @@
             <uri>model://robotx26/docking_task/dock/docking_link_no_boundary_s.obj</uri>
           </mesh>
         </geometry>
-        
       </visual>
     </link>
-    <frame name='led_1_link_joint' attached_to='docking_link'>
-      <pose>-0.254 -2.032 0.50800000000000001 0 0 0</pose>
-    </frame>
-    <frame name='led_1_link' attached_to='led_1_link_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
-    <frame name='led_2_link_joint' attached_to='docking_link'>
-      <pose>-0.254 0 0.50800000000000001 0 0 0</pose>
-    </frame>
-    <frame name='led_2_link' attached_to='led_2_link_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
-    <frame name='led_3_link_joint' attached_to='docking_link'>
-      <pose>-0.254 2.032 0.50800000000000001 0 0 0</pose>
-    </frame>
-    <frame name='led_3_link' attached_to='led_3_link_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
+
+    <include>
+      <name>docking_led_left</name>
+      <uri>model://robotx26/docking_led</uri>
+      <pose>-0.254 -2.032 0.568 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>docking_led_middle</name>
+      <uri>model://robotx26/docking_led</uri>
+      <pose>-0.254 0 0.568 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>docking_led_right</name>
+      <uri>model://robotx26/docking_led</uri>
+      <pose>-0.254 2.032 0.568 0 0 0</pose>
+    </include>
+
   </model>
 </sdf>
