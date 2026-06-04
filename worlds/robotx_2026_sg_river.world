@@ -296,11 +296,6 @@
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type="adiabatic"/>
 
-    <!-- spherical_coordinates maps world (0,0,0) to this lat/long (ENU frame).
-         NOTE: the jetty was relocated to ~(5.603, -363.797); the old GPS anchor
-         (jetty at 1°16'53.48"N 103°51'20.05"E) no longer holds. If NavSat GPS
-         fidelity to the real jetty location matters, adjust this origin to
-         re-anchor. -->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <world_frame_orientation>ENU</world_frame_orientation>
@@ -332,8 +327,7 @@
       <pose>195.866 173.723 -35 0 0 0</pose>
 
       </include>
-    <!-- Singapore River terrain + jetty/platform collision. Model offset (108,-115);
-         the jetty_collision and platform_plane links inside carry river-relative poses. -->
+    <!-- Singapore River terrain + jetty/platform collision the jetty_collision and platform_plane links inside carry river-relative poses. -->
     <include>
       <uri>model://robotx26/sg_river_course</uri>
       <pose>108 -115 0 0 0 0</pose>
@@ -360,10 +354,7 @@
 
     
     <!-- Visual piers along the jetty (same reason as above — material refs
-         like pier_diffuse.jpg only resolve at world-level include).
-         World coords = jetty_collision world pos (river-model offset (108,-115)
-         + link (-102.397,-248.797)) so the piers sit on the collision box and
-         on the same riverbank spot as commit 8946906. -->
+         like pier_diffuse.jpg only resolve at world-level include). -->
     <include>
       <uri>model://pier</uri>
       <name>pier_0</name>

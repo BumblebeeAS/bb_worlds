@@ -8,9 +8,7 @@
       <uri>https://fuel.gazebosim.org/1.0/monkescripts/models/Singapore River (Cropped out for Robot X 2026)</uri>
     </include>
 
-    <!-- Drone-landing collision platform. Shifted with the rest of the course
-         (delta (-87.866, -288.723)) so it stays co-located with docking_task
-         relative to the jetty. World pos = model offset (108,-115) + this. -->
+    <!-- Drone-landing collision platform -->
     <link name="platform_plane">
       <pose>-87.866 -288.723 0.0 0 0 0</pose>
       <collision name="collision">
@@ -20,13 +18,7 @@
       </collision>
     </link>
 
-    <!-- Jetty collision (single box matching full jetty length).
-         Pose is relative to this model, set to the jetty's offset from the
-         river-terrain mesh in commit 8946906: jetty (93.469,-75.074) - mesh
-         (195.866,173.723) = (-102.397,-248.797). The mesh now sits at the model
-         origin, so this link-pose IS that relative offset -> the jetty lands on
-         the same riverbank spot as 8946906. Visual piers (pier_0..7 in the
-         .world file) are placed at the matching world coords. -->
+    <!-- Jetty collision (single box matching full jetty length) -->
     <link name="jetty_collision">
       <pose>-102.397 -248.797 -0.5 0 0 -0.5457</pose>
       <collision name="collision">
