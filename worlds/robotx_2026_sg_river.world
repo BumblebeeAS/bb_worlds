@@ -296,7 +296,11 @@
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type="adiabatic"/>
 
-    <!-- Origin chosen so jetty at ENU (93.469, -75.074) lands on 1°16'53.48"N 103°51'20.05"E -->
+    <!-- spherical_coordinates maps world (0,0,0) to this lat/long (ENU frame).
+         NOTE: the jetty was relocated to ~(5.603, -363.797); the old GPS anchor
+         (jetty at 1°16'53.48"N 103°51'20.05"E) no longer holds. If NavSat GPS
+         fidelity to the real jetty location matters, adjust this origin to
+         re-anchor. -->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <world_frame_orientation>ENU</world_frame_orientation>
@@ -328,7 +332,8 @@
       <pose>195.866 173.723 -35 0 0 0</pose>
 
       </include>
-    <!-- Singapore River terrain + jetty/platform collision (offset so platform is at world origin) -->
+    <!-- Singapore River terrain + jetty/platform collision. Model offset (108,-115);
+         the jetty_collision and platform_plane links inside carry river-relative poses. -->
     <include>
       <uri>model://robotx26/sg_river_course</uri>
       <pose>108 -115 0 0 0 0</pose>
@@ -349,62 +354,65 @@
     <include>
       <name>docking_task</name>
       <uri>model://robotx26/docking_task</uri>
-      <pose>108 -115 0 0 0 0</pose>
+      <pose>20.134 -403.723 0 0 0 0</pose>
     </include>
 
 
     
     <!-- Visual piers along the jetty (same reason as above — material refs
-         like pier_diffuse.jpg only resolve at world-level include). -->
+         like pier_diffuse.jpg only resolve at world-level include).
+         World coords = jetty_collision world pos (river-model offset (108,-115)
+         + link (-102.397,-248.797)) so the piers sit on the collision box and
+         on the same riverbank spot as commit 8946906. -->
     <include>
       <uri>model://pier</uri>
       <name>pier_0</name>
-      <pose>93.469 -75.074 -5 0 0 1.0251</pose>
+      <pose>5.603 -363.797 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_1</name>
-      <pose>110.589 -85.394 -5 0 0 1.0251</pose>
+      <pose>22.723 -374.117 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_2</name>
-      <pose>127.709 -95.714 -5 0 0 1.0251</pose>
+      <pose>39.843 -384.437 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_3</name>
-      <pose>144.829 -106.034 -5 0 0 1.0251</pose>
+      <pose>56.963 -394.757 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_4</name>
-      <pose>161.949 -116.354 -5 0 0 1.0251</pose>
+      <pose>74.083 -405.077 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_5</name>
-      <pose>76.349 -64.754 -5 0 0 1.0251</pose>
+      <pose>-11.517 -353.477 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_6</name>
-      <pose>59.229 -54.434 -5 0 0 1.0251</pose>
+      <pose>-28.637 -343.157 -5 0 0 1.0251</pose>
     </include>
     <include>
       <uri>model://pier</uri>
       <name>pier_7</name>
-      <pose>42.109 -44.114 -5 0 0 1.0251</pose>
+      <pose>-45.757 -332.837 -5 0 0 1.0251</pose>
     </include>
 
     <!-- RobotX 2026 Task 3 (Coordinated Logistics) — simplified floating dock.
          Static (collision only — vehicles bounce off it, the deck doesn't bob).
          Carries its tins + colored circles as child visuals. Placed ~15 m NE
-         of the ASV spawn (135.69, -126.65). -->
+         of the ASV spawn (47.824, -415.373). -->
     <include>
       <name>floating_dock</name>
       <uri>model://robotx26/floating_dock_simple</uri>
-      <pose>150 -115 0 0 0 0</pose>
+      <pose>62.134 -403.723 0 0 0 0</pose>
     </include>
 
     <!-- RobotX 2026 Task 1 (Safe Passage) — LED buoy gate field.
@@ -414,36 +422,36 @@
          /led_<name>/change_led_mode (gz.msgs.StringMsg), bridged to ROS 2 and
          driven by the dashboard via led_beacon_driver. To add/remove buoys,
          just edit this list (keep names unique). Poses form a short corridor
-         near the ASV spawn (135.7, -126.7) — tune to the desired course. -->
+         near the ASV spawn (47.8, -415.4) — tune to the desired course. -->
     <include>
       <name>sp_entry</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>120 -110 0 0 0 0</pose>
+      <pose>32.134 -398.723 0 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate1_port</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>125 -112 0 0 0 0</pose>
+      <pose>37.134 -400.723 0 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate1_star</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>126 -117 0 0 0 0</pose>
+      <pose>38.134 -405.723 0 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate2_port</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>131 -114 0 0 0 0</pose>
+      <pose>43.134 -402.723 0 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate2_star</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>132 -119 0 0 0 0</pose>
+      <pose>44.134 -407.723 0 0 0 0</pose>
     </include>
     <include>
       <name>sp_exit</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>137 -116 0 0 0 0</pose>
+      <pose>49.134 -404.723 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
