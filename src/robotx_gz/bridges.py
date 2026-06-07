@@ -94,7 +94,7 @@ def led_change_mode(buoy_name, group_prefix="led"):
         direction=BridgeDirection.ROS_TO_GZ,
     )
 
-def docking_led_change_mode(group_name):
+def docking_pipe_led_change_mode(group_name):
     
     topic = f"/{group_name}/change_led_mode"
     return Bridge(

@@ -322,11 +322,12 @@
 
     <include>
       <uri>
-      https://fuel.gazebosim.org/1.0/hmoyen/models/Sand Heightmap
+        model://robotx26/sea_floor
       </uri>
-      <pose>195.866 173.723 -35 0 0 0</pose>
+      <pose>20.134 -403.723 -10 0 0 0</pose>
 
       </include>
+      
     <!-- Singapore River terrain + jetty/platform collision the jetty_collision and platform_plane links inside carry river-relative poses. -->
     <include>
       <uri>model://robotx26/sg_river_course</uri>
@@ -351,6 +352,14 @@
       <pose>20.134 -403.723 0 0 0 0</pose>
     </include>
 
+    <include>
+      <name>pipe_task</name>
+      <uri>model://robotx26/pipe_task</uri>
+      <pose>62 -414.723 -2 0 0 -1.21</pose>
+    </include>
+
+
+    
 
     
     <!-- Visual piers along the jetty (same reason as above — material refs
