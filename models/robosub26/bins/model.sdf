@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.11">
+  <model name="robosub26_bins">
+    <static>1</static>
+
+    <link name="bins_link">
+      <visual name="bins_visual">
+        <pose>0 0 0 1.5708 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robosub26/bins/bins.glb</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="bins_collision">
+        <pose>0 0 0.6 1.5708 0 1.5708</pose> //from the centre
+        <geometry>
+          <box>
+            <size>1.2 1.6 1.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
+
