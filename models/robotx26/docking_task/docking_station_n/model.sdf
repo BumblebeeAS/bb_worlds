@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='bounded_dock'>
+  <model name='dock_station_n'>
     <static>true</static>
     <pose>0 0 0 0 0 0</pose>
 
     <link name='docking_link'>
       <inertial>
-        <pose>-3.3493202366961417e-05 0 6.6986404733922848e-05 1.5700000000000001 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>5500.7075582190346</mass>
         <inertia>
           <ixx>240.61530446574389</ixx>
@@ -19,21 +19,21 @@
       </inertial>
 
       <collision name='docking_link_collision'>
-        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <pose>0 0 0 1.5708 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robotx26/docking_task/dock/docking_link_no_boundary_s.obj</uri>
+            <uri>model://robotx26/docking_task/docking_station_n/docking_station_n.glb</uri>
           </mesh>
         </geometry>
       </collision>
 
       <visual name='docking_link_visual'>
-        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <pose>0 0 0 1.5708 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robotx26/docking_task/dock/docking_link_no_boundary_s.obj</uri>
+            <uri>model://robotx26/docking_task/docking_station_n/docking_station_n.glb</uri>
           </mesh>
         </geometry>
       </visual>
@@ -42,19 +42,19 @@
     <include>
       <name>docking_led_left</name>
       <uri>model://robotx26/docking_led</uri>
-      <pose>-0.254 -2.032 0.568 0 0 0</pose>
+      <pose> 0 -4.068 0.06453 0 0 0</pose>
     </include>
 
     <include>
       <name>docking_led_middle</name>
       <uri>model://robotx26/docking_led</uri>
-      <pose>-0.254 0 0.568 0 0 0</pose>
+      <pose>0 -2.038 0.06453 0 0 0</pose>
     </include>
 
     <include>
       <name>docking_led_right</name>
       <uri>model://robotx26/docking_led</uri>
-      <pose>-0.254 2.032 0.568 0 0 0</pose>
+      <pose>0 0 0.06453 0 0 0</pose>
     </include>
 
   </model>
