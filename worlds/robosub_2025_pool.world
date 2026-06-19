@@ -17,7 +17,7 @@
 <!-- Modified for different Gazebo GUI camera angle -->
 
 <sdf version="1.4">
-  <world name="sauvc_2024">
+  <world name="robosub_2025_pool">
     <scene>
       <ambient>0.01 0.01 0.01 1.0</ambient>
       <sky>

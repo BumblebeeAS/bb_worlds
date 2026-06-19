@@ -2,6 +2,14 @@
 <sdf version="1.11">    <model name="dropper_marker">
         <static>false</static>
         <link name="link">
+            <inertial>
+                <mass>0.5</mass>
+                <inertia>
+                    <ixx>0.0002</ixx><ixy>0</ixy><ixz>0</ixz>
+                    <iyy>0.0002</iyy><iyz>0</iyz>
+                    <izz>0.0001</izz>
+                </inertia>
+            </inertial>
             <visual name="dropper_marker_visual">
                 <geometry>
                     <mesh>
@@ -11,9 +19,10 @@
             </visual>
             <collision name="dropper_marker_collision">
                 <geometry>
-                    <mesh>
-                        <uri>model://dropper_marker/mesh/dropper_marker.dae</uri>
-                    </mesh>
+                    <cylinder>
+                        <radius>0.02</radius>
+                        <length>0.05</length>
+                    </cylinder>
                 </geometry>
             </collision>
         </link>
