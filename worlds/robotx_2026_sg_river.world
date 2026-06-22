@@ -299,8 +299,8 @@
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <world_frame_orientation>ENU</world_frame_orientation>
-      <latitude_deg>1.2821966</latitude_deg>
-      <longitude_deg>103.8547296</longitude_deg>
+      <latitude_deg>1.2894320</latitude_deg>
+      <longitude_deg>103.8553700</longitude_deg>
       <elevation>0.0</elevation>
       <heading_deg>0.0</heading_deg>
     </spherical_coordinates>
@@ -322,12 +322,13 @@
 
     <include>
       <uri>
-        model://robotx26/sea_floor
+      https://fuel.gazebosim.org/1.0/hmoyen/models/Sand Heightmap
       </uri>
-      <pose>20.134 -403.723 -10 0 0 0</pose>
+      <!-- Centred under the jetty + pier visuals (pier_* centroid ~ (14.16, -369));
+           z=-35 keeps it at riverbed depth. -->
+      <pose>14.163 -368.957 -35 0 0 0</pose>
 
       </include>
-      
     <!-- Singapore River terrain + jetty/platform collision the jetty_collision and platform_plane links inside carry river-relative poses. -->
     <include>
       <uri>model://robotx26/sg_river_course</uri>
@@ -346,65 +347,74 @@
 
     <!-- task 3 docking -->
     <!-- led change is done by ros2 service call on /robotx/docking_led/choice. rgr represents red, green, red etc -->
-    <!-- <include>
+    <include>
       <name>docking_task</name>
       <uri>model://robotx26/docking_task/docking_station_bounded</uri>
-      <pose>20.134 -403.723 0.254 0 0 0</pose>
-    </include> -->
+      <pose>20.134 -403.723 0.5 0 0 0</pose>
+    </include>
+
+    <!-- Underwater pipe task (RobotX 2026). Pose is world-relative. -->
     <include>
-      <name>docking_task</name>
-      <uri>model://robotx26/docking_task/docking_station_n</uri>
-      <pose>20.134 -403.723 0.254 0 0 0</pose>
-    </include>    
-    <!-- <include>
-      <name>docking_task</name>
-      <uri>model://robotx26/docking_task/docking_station_s</uri>
-      <pose>20.134 -403.723 0.254 0 0 0</pose>
-    </include> -->
-
-
-
-
-
-
-    <!-- <include>
       <name>pipe_task</name>
       <uri>model://robotx26/pipe_task/pipe_task_var1</uri>
-      <pose>62 -414.723 -2 0 0 -1.21</pose>
+      <pose>60.173 -409.882 -0.526 -1.5708 0 1.93159</pose>
     </include>
-    <include>
-      <name>pipe_task</name>
-      <uri>model://robotx26/pipe_task/pipe_task_var2</uri>
-      <pose>62 -414.723 -2 0 0 -1.21</pose>
-    </include> -->
 
-    <!-- start and end buoys -->
-    <!-- colors dont change at the moment unless you want to pub gz topic once below-->
-    <!-- gz topic -t /led_pipe_buoy_left/change_led_mode -m gz.msgs.StringMsg -p "data: 'steady_red'"
-    gz topic -t /led_pipe_buoy_right/change_led_mode -m gz.msgs.StringMsg -p "data: 'steady_green'" -->
-
-    <include>
-      <name>pipe_buoy_left</name>
-      <uri>model://robotx26/safe_passage_buoy</uri>
+    <!-- Pipe-task start/end buoys -->
+    <model name='pipe_buoy_left'>
+      <static>true</static>
       <pose>63 -414 0 0 0 0</pose>
-    </include>
+      <link name='buoy_base'>
+        <pose>0 0 0.15 0 0 0</pose>
+        <collision name='buoy_collision'>
+          <geometry><box><size>0.45 0.45 0.3</size></box></geometry>
+        </collision>
+        <visual name='buoy_base_visual'>
+          <pose>0 0 0.15 0 0 0</pose>
+          <geometry><mesh><uri>model://robotx26/safe_passage_buoy/buoy_vis.glb</uri></mesh></geometry>
+        </visual>
+        <!-- Red LED bulb (static, self-lit): fixed port gate marker, not dashboard-driven. -->
+        <visual name='bulb_visual'>
+          <pose>0 0 0.25 0 0 0</pose>
+          <geometry><cylinder><radius>0.064</radius><length>0.12906</length></cylinder></geometry>
+          <material>
+            <ambient>0.3 0.0 0.0 1</ambient>
+            <diffuse>1.0 0.0 0.0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>1.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
 
-     <include>
-      <name>pipe_buoy_right</name>
-      <uri>model://robotx26/safe_passage_buoy</uri>
+    <model name='pipe_buoy_right'>
+      <static>true</static>
       <pose>55.36 -419.56 0 0 0 0</pose>
-    </include>
+      <link name='buoy_base'>
+        <pose>0 0 0.15 0 0 0</pose>
+        <collision name='buoy_collision'>
+          <geometry><box><size>0.45 0.45 0.3</size></box></geometry>
+        </collision>
+        <visual name='buoy_base_visual'>
+          <pose>0 0 0.15 0 0 0</pose>
+          <geometry><mesh><uri>model://robotx26/safe_passage_buoy/buoy_vis.glb</uri></mesh></geometry>
+        </visual>
+        <!-- Green LED bulb (static, self-lit): fixed starboard gate marker, not dashboard-driven. -->
+        <visual name='bulb_visual'>
+          <pose>0 0 0.25 0 0 0</pose>
+          <geometry><cylinder><radius>0.064</radius><length>0.12906</length></cylinder></geometry>
+          <material>
+            <ambient>0.0 0.3 0.0 1</ambient>
+            <diffuse>0.0 1.0 0.0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0.0 1.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
 
-    <include>
-      <name>pipe_task</name>
-      <uri>model://robotx26/pipe_task/pipe_task_var3</uri>
-      <pose>62 -414.723 -2 0 0 -1.21</pose>
-    </include>
 
 
-    
-
-    
     <!-- Visual piers along the jetty (same reason as above — material refs
          like pier_diffuse.jpg only resolve at world-level include). -->
     <include>
@@ -448,14 +458,18 @@
       <pose>-45.757 -332.837 -5 0 0 1.0251</pose>
     </include>
 
-    <!-- RobotX 2026 Task 3 (Coordinated Logistics) — simplified floating dock.
-         Static (collision only — vehicles bounce off it, the deck doesn't bob).
-         Carries its tins + colored circles as child visuals. Placed ~15 m NE
-         of the ASV spawn (47.824, -415.373). -->
+    <!-- RobotX 2026 Task 3 (Coordinated Logistics) -->
     <include>
       <name>floating_dock</name>
       <uri>model://robotx26/floating_dock_simple</uri>
-      <pose>62.134 -403.723 0 0 0 0</pose>
+      <pose>13.134 -403.723 0 0 0 0</pose>
+    </include>
+
+    <!-- Second floating tin platform for Task 3 -->
+    <include>
+      <name>floating_dock_2</name>
+      <uri>model://robotx26/floating_dock_simple</uri>
+      <pose>13.134 -399.323 0 0 0 0</pose>
     </include>
 
     <!-- RobotX 2026 Task 1 (Safe Passage) — LED buoy gate field.

@@ -18,14 +18,31 @@
         </inertia>
       </inertial>
 
-      <collision name='docking_link_collision'>
-        <pose>0 0 0 1.5708 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://robotx26/docking_task/docking_station_bounded/docking_station_bounded.glb</uri>
-          </mesh>
-        </geometry>
+      <!-- Primitive box collisions replacing the 2 MB triangle-mesh collision
+           (the visual below still uses the full .glb). Derived from the mesh's
+           own vertices: a back beam plus 4 forward "fingers", leaving the 3
+           docking bays (between fingers, centred on the 3 docking_led poses
+           y=0/-2.038/-4.068) collision-free so the boat can drive in. Poses are
+           in the link frame with the mesh's +90 deg X-roll already baked in. -->
+      <collision name='dock_back_beam'>
+        <pose>-0.244 -2.032 -0.255 0 0 0</pose>
+        <geometry><box><size>1.133 6.700 0.514</size></box></geometry>
+      </collision>
+      <collision name='dock_finger_1'>
+        <pose>1.317 1.016 -0.255 0 0 0</pose>
+        <geometry><box><size>2.034 0.604 0.514</size></box></geometry>
+      </collision>
+      <collision name='dock_finger_2'>
+        <pose>1.317 -1.016 -0.255 0 0 0</pose>
+        <geometry><box><size>2.034 0.604 0.514</size></box></geometry>
+      </collision>
+      <collision name='dock_finger_3'>
+        <pose>1.317 -3.048 -0.255 0 0 0</pose>
+        <geometry><box><size>2.034 0.604 0.514</size></box></geometry>
+      </collision>
+      <collision name='dock_finger_4'>
+        <pose>1.317 -5.080 -0.255 0 0 0</pose>
+        <geometry><box><size>2.034 0.604 0.514</size></box></geometry>
       </collision>
 
       <visual name='docking_link_visual'>
