@@ -133,27 +133,10 @@
     </include>
 
     <include>
-      <name>milkcrate_blood_1</name>
-      <uri>model://robosub26/milkcrate_blood</uri>
-      <pose>-3 3.5 -2.1336 0 0 0</pose>
-    </include>
-
-    <include>
-      <name>milkcrate_fire_1</name>
-      <uri>model://robosub26/milkcrate_fire</uri>
-      <pose>-3 2.5 -2.1336 0 0 0</pose>
-    </include>
-
-    <include>
-      <name>milkcrate_blood_2</name>
-      <uri>model://robosub26/milkcrate_blood</uri>
-      <pose>-2 3.5 -2.1336 0 0 0</pose>
-    </include>
-
-    <include>
-      <name>milkcrate_fire_2</name>
-      <uri>model://robosub26/milkcrate_fire</uri>
-      <pose>-2 2.5 -2.1336 0 0 0</pose>
+      <static>true</static>
+      <name>bins_task</name>
+      <uri>model://robosub26/bins</uri>
+      <pose>-2.5 3 -2.1127 0 0 0</pose>
     </include>
 
 
