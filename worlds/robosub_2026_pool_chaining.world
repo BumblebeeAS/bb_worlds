@@ -128,57 +128,52 @@
     </include> -->
 
     <include>
-      <uri>model://sp_swimming_pool</uri>
+      <uri>model://woollett_pool</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
     <include>
       <name>milkcrate_blood_1</name>
       <uri>model://robosub26/milkcrate_blood</uri>
-      <pose>-3 3.5 -2 0 0 0</pose>
+      <pose>-3 3.5 -2.1336 0 0 0</pose>
     </include>
 
     <include>
       <name>milkcrate_fire_1</name>
       <uri>model://robosub26/milkcrate_fire</uri>
-      <pose>-3 2.5 -2 0 0 0</pose>
+      <pose>-3 2.5 -2.1336 0 0 0</pose>
     </include>
 
     <include>
       <name>milkcrate_blood_2</name>
       <uri>model://robosub26/milkcrate_blood</uri>
-      <pose>-2 3.5 -2 0 0 0</pose>
+      <pose>-2 3.5 -2.1336 0 0 0</pose>
     </include>
 
     <include>
       <name>milkcrate_fire_2</name>
       <uri>model://robosub26/milkcrate_fire</uri>
-      <pose>-2 2.5 -2 0 0 0</pose>
+      <pose>-2 2.5 -2.1336 0 0 0</pose>
     </include>
 
-    <include>
-      <name>surface</name>
-			<uri>model://pool_waves</uri>
-      <pose>0 0 0 0 0 0</pose>
-		</include>
 
     <include>
       <name>torpedo_panel_v1</name>
       <uri>model://robosub26/torpedo_panel_v1</uri>
-      <pose>3 0 -2 0 0 1.57</pose>
+      <pose>3 0 -2.1336 0 0 1.57</pose>
     </include>
 
     <!--
         <include>
         <name>torpedo_panel_v2</name>
         <uri>model://robosub26/torpedo_panel_v2</uri>
-        <pose>3 0 -2 0 0 1.57</pose>
+        <pose>3 0 -2.1336 0 0 1.57</pose>
         </include>
     -->
     <include>
       <name>gate</name>
       <uri>model://robosub26/gate</uri>
-      <pose>6 0 -2 0 0 0</pose>
+      <pose>6 0 -2.1336 0 0 0</pose>
     </include>
 
     <include>
@@ -190,13 +185,13 @@
     <include>
       <name>collection_table</name>
       <uri>model://robosub26/collection_table</uri>
-      <pose>-6 -4.5 -1.1 0 0 0</pose>
+      <pose>-6 -4.5 -1.2766 0 0 0</pose>
     </include>
 
     <!-- <include>
       <name>ladle_1</name>
       <uri>model://robosub25/ladle</uri>
-      <pose>-6 -4.5 -1.1 0 0 0</pose>
+      <pose>-6 -4.5 -1.2766 0 0 0</pose>
     </include>
     -->
     <include>

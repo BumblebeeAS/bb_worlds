@@ -128,7 +128,7 @@
     </include> -->
 
     <include>
-      <uri>model://sp_swimming_pool</uri>
+      <uri>model://woollett_pool</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
@@ -136,31 +136,26 @@
       <static>true</static>
       <name>bins_task</name>
       <uri>model://robosub26/bins</uri>
-      <pose>-3 2 -1.95 0 0 0</pose>
+      <pose>-3 2 -2.1336 0 0 0</pose>
     </include>
 
-    <include>
-      <name>surface</name>
-			<uri>model://pool_waves</uri>
-      <pose>0 0 0 0 0 0</pose>
-		</include>
 
     <include>
       <name>torpedo_panel_v1</name>
       <uri>model://robosub26/torpedo_panel_v1</uri>
-      <pose>1 0 -2 0 0 0</pose>
+      <pose>1 0 -2.1336 0 0 0</pose>
     </include>
 
     <include>
       <name>torpedo_panel_v2</name>
       <uri>model://robosub26/torpedo_panel_v2</uri>
-      <pose>3 0 -2 0 0 0</pose>
+      <pose>3 0 -2.1336 0 0 0</pose>
     </include>
 
     <include>
       <name>gate</name>
       <uri>model://robosub26/gate</uri>
-      <pose>6 0 -2 0 0 0</pose>
+      <pose>6 0 -2.1336 0 0 0</pose>
     </include>
 
     <include>
@@ -172,21 +167,21 @@
     <include>
       <name>collection_table</name>
       <uri>model://robosub26/collection_table</uri>
-      <pose>-6 -4.5 -1.1 0 0 0</pose>
+      <pose>-6 -4.5 -1.2766 0 0 0</pose>
     </include>
 
     <!-- directly added here instead at the collection table to allow drag and drop -->
     <include>
         <static>false</static>
         <name>nut_container</name>
-        <pose>-5.85 -4.65 -1.1 0 0 0</pose>
+        <pose>-5.85 -4.65 -1.2766 0 0 0</pose>
         <uri>model://robosub26/nut_container</uri>
 
       </include>
       <include>
         <static>false</static>
         <name>pill_container</name>
-        <pose>-6.15 -4.35 -1.1 0 0 0</pose>
+        <pose>-6.15 -4.35 -1.2766 0 0 0</pose>
 
         <uri>model://robosub26/pill_container</uri>
 
@@ -194,14 +189,14 @@
       <include>
         <static>false</static>
         <name>bandage_container</name>
-        <pose>-5.85 -4.35 -1.1 0 0 0</pose>
+        <pose>-5.85 -4.35 -1.2766 0 0 0</pose>
         <uri>model://robosub26/bandage_container</uri>
 
       </include>
       <include>
         <static>false</static>
         <name>plug_container</name>
-        <pose>-6.15 -4.65 -1.1 0 0 0</pose>
+        <pose>-6.15 -4.65 -1.2766 0 0 0</pose>
         <uri>model://robosub26/plug_container</uri>
 
       </include>
@@ -211,7 +206,7 @@
     <!-- <include>
       <name>ladle_1</name>
       <uri>model://robosub25/ladle</uri>
-      <pose>-6 -4.5 -1.1 0 0 0</pose>
+      <pose>-6 -4.5 -1.2766 0 0 0</pose>
     </include>
     -->
     <include>
