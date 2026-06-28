@@ -327,8 +327,13 @@
       <!-- Centred under the jetty + pier visuals (pier_* centroid ~ (14.16, -369));
            z=-35 keeps it at riverbed depth. -->
       <pose>14.163 -368.957 -35 0 0 0</pose>
-
-      </include>
+      <experimental:params>
+        <visual element_id="link::ground_sand">
+          <visibility_flags action="add">8</visibility_flags>
+        </visual>
+      </experimental:params>
+    </include>
+    
     <!-- Singapore River terrain + jetty/platform collision the jetty_collision and platform_plane links inside carry river-relative poses. -->
     <include>
       <uri>model://robotx26/sg_river_course</uri>
@@ -341,6 +346,11 @@
          against the outer model dir instead of the Fuel cache). -->
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
+      <experimental:params>
+        <visual element_id="link::visual">
+          <visibility_flags action="add">8</visibility_flags>
+        </visual>
+      </experimental:params>
     </include>
       
 
