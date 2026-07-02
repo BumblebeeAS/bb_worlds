@@ -24,7 +24,7 @@
 
       <!-- Lightbox marker visuals (flat ring: inner 0.35 / outer 0.4), driven by gz_led_plugin -->
       <visual name="lightbox_1_visual">
-        <pose>-0.36785 0.021059 0.57 0 0 0</pose>
+        <pose>-0.37208 0.031381 0.6168 -0.785 0 0</pose>
         <geometry>
           <mesh><uri>model://robosub26/bins/led_ring.glb</uri></mesh>
         </geometry>
@@ -37,7 +37,7 @@
       </visual>
 
       <visual name="lightbox_2_visual">
-        <pose>0.36566 -1.3858 0.16226 0 0 0</pose>
+        <pose>0.37223 -1.3982 0.2108 0.785 0 0</pose>
         <geometry>
           <mesh><uri>model://robosub26/bins/led_ring.glb</uri></mesh>
         </geometry>
