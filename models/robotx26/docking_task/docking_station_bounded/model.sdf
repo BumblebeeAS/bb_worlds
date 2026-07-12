@@ -59,20 +59,56 @@
     <include>
       <name>docking_led_left</name>
       <uri>model://robotx26/docking_led</uri>
-      <pose> 0 -4.068 0.06453 0 0 0</pose>
+      <pose> 0 -4.068 0.448 0 0 0</pose>
     </include>
 
     <include>
       <name>docking_led_middle</name>
       <uri>model://robotx26/docking_led</uri>
-      <pose>0 -2.038 0.06453 0 0 0</pose>
+      <pose>0 -2.038 0.448 0 0 0</pose>
     </include>
 
     <include>
       <name>docking_led_right</name>
       <uri>model://robotx26/docking_led</uri>
-      <pose>0 0 0.06453 0 0 0</pose>
+      <pose>0 0 0.448 0 0 0</pose>
     </include>
+
+
+  <include>
+    <name>window_target_led_left_left</name>
+    <uri>model://robotx26/dock_window_target_led</uri>
+    <pose>-0.08 -4.297 0.90989 0 1.5708 0</pose>
+  </include>
+
+  <include>
+    <name>window_target_led_left_right</name>
+    <uri>model://robotx26/dock_window_target_led</uri>
+    <pose>-0.08 -3.839 1.188 0 1.5708 0</pose>
+  </include>
+
+  <include>
+    <name>window_target_led_centre_left</name>
+    <uri>model://robotx26/dock_window_target_led</uri>
+    <pose> -0.08 -2.267 0.90989 0 1.5708 0</pose>
+  </include>
+  <include>
+    <name>window_target_led_centre_right</name>
+    <uri>model://robotx26/dock_window_target_led</uri>
+    <pose> -0.08 -1.809 1.188 0 1.5708 0</pose>
+  </include>
+
+  <include>
+    <name>window_target_led_right_left</name>
+    <uri>model://robotx26/dock_window_target_led</uri>
+    <pose>-0.08 -0.229 0.90989 0 1.5708 0</pose>
+  </include>
+  <include>
+    <name>window_target_led_right_right</name>
+    <uri>model://robotx26/dock_window_target_led</uri>
+    <pose>-0.08 0.229 1.188 0 1.5708 0</pose>
+  </include>
+
 
   </model>
 </sdf>

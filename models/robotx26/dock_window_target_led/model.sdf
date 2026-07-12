@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='dock_window_target_led'>
+    <static>true</static>
+    <link name='dock_window_target_led_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <collision name='dock_window_target_led_collision'>
+        <geometry>
+          <box>
+            <size> 0.3 0.3 0.01</size> 
+          </box>
+        </geometry>
+      </collision>
+<!-- extremelt larger dimensioons as we just need it to be seen through th ewindow -->
+      <visual name='dock_window_target_led_visual'>
+        <geometry>
+          <box>
+            <size> 0.3 0.3 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <plugin filename="libgz_led_plugin.so" name="gz::sim::systems::LedPlugin">
+      <startup_mode>off</startup_mode>
+
+      <led name="led">
+        <visual_name>dock_window_target_led_link::dock_window_target_led_visual</visual_name>
+        <default_state>
+          <color>0 0 0 1</color>
+          <intensity>0.0</intensity>
+        </default_state>
+      </led>
+
+      <mode name='off'>
+        <step always_on='true'><color>0 0 0 1</color></step>
+      </mode>
+
+      <mode name='steady_red'>
+        <step always_on='true'><color>1 0 0 1</color></step>
+
+      </mode>
+
+      <mode name='steady_green'>
+        <step always_on='true'><color>0 1 0 1</color></step>
+      </mode>
+
+      <mode name='steady_blue'>
+        <step always_on='true'><color>0 0 1 1</color></step>
+      </mode>
+
+
+    </plugin>
+  </model>
+</sdf>

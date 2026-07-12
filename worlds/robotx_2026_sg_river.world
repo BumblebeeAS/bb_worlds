@@ -360,7 +360,7 @@
     <include>
       <name>docking_task</name>
       <uri>model://robotx26/docking_task/docking_station_bounded</uri>
-      <pose>20.134 -403.723 0.5 0 0 0</pose>
+      <pose>20.134 -403.723 0 0 0 0</pose>
     </include>
 
     <!-- Underwater pipe task (RobotX 2026). Pose is world-relative. -->
