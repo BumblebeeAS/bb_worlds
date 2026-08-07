@@ -265,6 +265,12 @@
       filename="gz-sim-air-pressure-system"
       name="gz::sim::systems::AirPressure">
     </plugin>
+    
+    <plugin
+      filename="gz-sim-contact-system"
+      name="gz::sim::systems::Contact">
+    </plugin>
+    
     <plugin
       filename="gz-sim-navsat-system"
       name="gz::sim::systems::NavSat">
@@ -285,6 +291,7 @@
         </density_change>
       </graded_buoyancy>
     </plugin>
+
 
     <scene>
       <sky></sky>
@@ -321,9 +328,10 @@
 
 
     <include>
-      <uri>
+      <!-- <uri>
       https://fuel.gazebosim.org/1.0/hmoyen/models/Sand Heightmap
-      </uri>
+      </uri> -->
+      <uri>model://robotx26/sand_heightmap</uri>
       <!-- Centred under the jetty + pier visuals (pier_* centroid ~ (14.16, -369));
            z=-35 keeps it at riverbed depth. -->
       <pose>14.163 -368.957 -35 0 0 0</pose>
@@ -345,7 +353,9 @@
          (nesting it inside another model causes a segfault — paths resolve
          against the outer model dir instead of the Fuel cache). -->
     <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri>
+      <!-- <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coast Water</uri> -->
+      <uri>model://robotx26/coast_water</uri>
+
       <experimental:params>
         <visual element_id="link::visual">
           <visibility_flags action="add">8</visibility_flags>
@@ -360,68 +370,17 @@
     <include>
       <name>docking_task</name>
       <uri>model://robotx26/docking_task/docking_station_bounded</uri>
-      <pose>20.134 -403.723 0 0 0 0</pose>
+      <pose>20.134 -403.723 -0.21 0 0 0</pose>
     </include>
 
     <!-- Underwater pipe task (RobotX 2026). Pose is world-relative. -->
     <include>
       <name>pipe_task</name>
       <uri>model://robotx26/pipe_task/pipe_task_var1</uri>
-      <pose>60.173 -409.882 -0.526 -1.5708 0 1.93159</pose>
+      <pose>60.173 -409.882 -2.11 0 0 1.93159</pose>
     </include>
 
     <!-- Pipe-task start/end buoys -->
-    <model name='pipe_buoy_left'>
-      <static>true</static>
-      <pose>63 -414 0 0 0 0</pose>
-      <link name='buoy_base'>
-        <pose>0 0 0.15 0 0 0</pose>
-        <collision name='buoy_collision'>
-          <geometry><box><size>0.45 0.45 0.3</size></box></geometry>
-        </collision>
-        <visual name='buoy_base_visual'>
-          <pose>0 0 0.15 0 0 0</pose>
-          <geometry><mesh><uri>model://robotx26/safe_passage_buoy/buoy_vis.glb</uri></mesh></geometry>
-        </visual>
-        <!-- Red LED bulb (static, self-lit): fixed port gate marker, not dashboard-driven. -->
-        <visual name='bulb_visual'>
-          <pose>0 0 0.25 0 0 0</pose>
-          <geometry><cylinder><radius>0.064</radius><length>0.12906</length></cylinder></geometry>
-          <material>
-            <ambient>0.3 0.0 0.0 1</ambient>
-            <diffuse>1.0 0.0 0.0 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-            <emissive>1.0 0.0 0.0 1</emissive>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name='pipe_buoy_right'>
-      <static>true</static>
-      <pose>55.36 -419.56 0 0 0 0</pose>
-      <link name='buoy_base'>
-        <pose>0 0 0.15 0 0 0</pose>
-        <collision name='buoy_collision'>
-          <geometry><box><size>0.45 0.45 0.3</size></box></geometry>
-        </collision>
-        <visual name='buoy_base_visual'>
-          <pose>0 0 0.15 0 0 0</pose>
-          <geometry><mesh><uri>model://robotx26/safe_passage_buoy/buoy_vis.glb</uri></mesh></geometry>
-        </visual>
-        <!-- Green LED bulb (static, self-lit): fixed starboard gate marker, not dashboard-driven. -->
-        <visual name='bulb_visual'>
-          <pose>0 0 0.25 0 0 0</pose>
-          <geometry><cylinder><radius>0.064</radius><length>0.12906</length></cylinder></geometry>
-          <material>
-            <ambient>0.0 0.3 0.0 1</ambient>
-            <diffuse>0.0 1.0 0.0 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-            <emissive>0.0 1.0 0.0 1</emissive>
-          </material>
-        </visual>
-      </link>
-    </model>
 
 
 

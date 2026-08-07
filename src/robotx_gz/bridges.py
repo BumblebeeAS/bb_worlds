@@ -75,6 +75,17 @@ def robotx_obstacle_pose(model_name):
     )
 
 
+def water_cannon(link_name: str, namespace: str = ""):
+    """Create a ROS-to-Gazebo bridge for a water-cannon joint command."""
+    topic_prefix = f"/{namespace}" if namespace else ""
+    return Bridge(
+        gz_topic=f"{topic_prefix}/water_cannon/{link_name}_revolve_cmd",
+        ros_topic=f"{topic_prefix}/water_cannon/{link_name}_revolve/joint_cmd",
+        gz_type="gz.msgs.Double",
+        ros_type="std_msgs/msg/Float64",
+        direction=BridgeDirection.ROS_TO_GZ,
+    )
+
 
 def led_change_mode(name, group_prefix="led"):
     """ROS->gz bridge for a safe_passage_buoy's LedPlugin mode-change topic.
