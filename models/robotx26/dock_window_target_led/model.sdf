@@ -11,6 +11,13 @@
           </box>
         </geometry>
       </collision>
+      <sensor name='dock_window_target_led_contact' type='contact'>
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <contact>
+          <collision>dock_window_target_led_collision</collision>
+        </contact>
+      </sensor>
 <!-- extremelt larger dimensioons as we just need it to be seen through th ewindow -->
       <visual name='dock_window_target_led_visual'>
         <geometry>
