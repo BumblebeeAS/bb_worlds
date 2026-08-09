@@ -18,20 +18,21 @@
       </inertial>
      
       <collision name='pipe_base_link_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 1.57 0 0</pose>
         <geometry>
-          <box>
-            <size>5 1 3</size>
-          </box>
+         <mesh>
+            <uri>model://robotx26/pipe_task/pipe_task_var2/meshes/pipe.glb</uri>
+            <scale>1.0 1.0 1.0</scale>
+        </mesh>
         </geometry>
       </collision>
 
       <visual name='pipe_base_visual'>
-         <pose> 0 0 0 0 0 0 </pose>
+         <pose> 0 0 0 1.57 0 0 </pose>
             <geometry>
             <mesh>
 
-            <uri>model://robotx26/pipe_task/pipe_task_var2/meshes/pipe2_var2.glb</uri>
+            <uri>model://robotx26/pipe_task/pipe_task_var2/meshes/pipe.glb</uri>
             </mesh>
 
             </geometry>
@@ -45,38 +46,145 @@
     <include>
       <name>pipe_led_1</name>
       <uri>model://robotx26/pipe_led</uri>
-      <pose>0.849 0 0.15 1.57079 0 1.57079</pose>
+      <pose>-0.79196 -1.37466 0.043369 1.57 0 0</pose>
 
     </include>
 
     <include>
       <name>pipe_led_2</name>
       <uri>model://robotx26/pipe_led</uri>
-      <pose>1.445 -1.031 0.15 1.57079 0 1.57079</pose>
+      <pose>-0.39598 -0.68733 0.043369 1.57 0 0</pose>
 
     </include>
 
     <include>
       <name>pipe_led_3</name>
       <uri>model://robotx26/pipe_led</uri>
-      <pose>1.006 -2.42 0.15 1.57079 0 1.57079</pose>
+      <pose>0 0 0.043369 1.57 0 0</pose>
 
     </include>
 
     <include>
       <name>pipe_led_4</name>
       <uri>model://robotx26/pipe_led</uri>
-      <pose>2.081 -3.404 0.15 1.57079 0 1.57079</pose>
+      <pose>0.39598 0.68733 0.043369 1.57 0 0</pose>
 
     </include>
 
     <include>
       <name>pipe_led_5</name>
       <uri>model://robotx26/pipe_led</uri>
-      <pose>3.156 -4.387 0.15 1.57079 0 1.57079</pose>
-
+      <pose>0.791 1.37466 0.043369 1.57 0 0</pose>
+    
     </include>
 
+    <include>
+      <name>pipe_buoy_left</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>4 4 2 0 0 0</pose>
+      <static>true</static>
+    </include>
+    <include>
+      <name>pipe_buoy_right</name>
+      <uri>model://robotx26/safe_passage_buoy</uri>
+      <pose>-4 -4 2 0 0 0</pose>
+      <static>true</static>
+    </include>
+
+<plugin
+      filename="libDistance_SensorSystem.so"
+      name="Distance_Sensor::Distance_SensorSystem">
+      <vehicle_name>auv4</vehicle_name>
+      <target_name>pipe_led_1</target_name>
+      <!-- Vehicle-local FLU offset -->
+      <vehicle_offset_x>0.0</vehicle_offset_x>
+      <vehicle_offset_y>0.0</vehicle_offset_y>
+      <vehicle_offset_z>-0.1</vehicle_offset_z>
+      <distance_threshold>0.3</distance_threshold>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_subscribe_topic>/led_pipe_led_1/change_led_mode</gz_subscribe_topic>
+      <trigger_condition>steady_red</trigger_condition>
+      <output_topic>/led_pipe_led_1/change_led_mode</output_topic>
+      <below_threshold_message>steady_green</below_threshold_message>
+      <above_threshold_message>steady_red</above_threshold_message>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+    </plugin>
+
+    <plugin
+      filename="libDistance_SensorSystem.so"
+      name="Distance_Sensor::Distance_SensorSystem">
+      <vehicle_name>auv4</vehicle_name>
+      <target_name>pipe_led_2</target_name>
+      <!-- Vehicle-local FLU offset -->
+      <vehicle_offset_x>0.0</vehicle_offset_x>
+      <vehicle_offset_y>0.0</vehicle_offset_y>
+      <vehicle_offset_z>-0.1</vehicle_offset_z>
+      <distance_threshold>0.3</distance_threshold>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_subscribe_topic>/led_pipe_led_2/change_led_mode</gz_subscribe_topic>
+      <trigger_condition>steady_red</trigger_condition>
+      <output_topic>/led_pipe_led_2/change_led_mode</output_topic>
+      <below_threshold_message>steady_green</below_threshold_message>
+      <above_threshold_message>steady_red</above_threshold_message>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+    </plugin>
+
+    <plugin
+      filename="libDistance_SensorSystem.so"
+      name="Distance_Sensor::Distance_SensorSystem">
+      <vehicle_name>auv4</vehicle_name>
+      <target_name>pipe_led_3</target_name>
+      <!-- Vehicle-local FLU offset -->
+      <vehicle_offset_x>0.0</vehicle_offset_x>
+      <vehicle_offset_y>0.0</vehicle_offset_y>
+      <vehicle_offset_z>-0.1</vehicle_offset_z>
+      <distance_threshold>0.3</distance_threshold>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_subscribe_topic>/led_pipe_led_3/change_led_mode</gz_subscribe_topic>
+      <trigger_condition>steady_red</trigger_condition>
+      <output_topic>/led_pipe_led_3/change_led_mode</output_topic>
+      <below_threshold_message>steady_green</below_threshold_message>
+      <above_threshold_message>steady_red</above_threshold_message>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+    </plugin>
+
+    <plugin
+      filename="libDistance_SensorSystem.so"
+      name="Distance_Sensor::Distance_SensorSystem">
+      <vehicle_name>auv4</vehicle_name>
+      <target_name>pipe_led_4</target_name>
+      <!-- Vehicle-local FLU offset -->
+      <vehicle_offset_x>0.0</vehicle_offset_x>
+      <vehicle_offset_y>0.0</vehicle_offset_y>
+      <vehicle_offset_z>-0.1</vehicle_offset_z>
+      <distance_threshold>0.3</distance_threshold>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_subscribe_topic>/led_pipe_led_4/change_led_mode</gz_subscribe_topic>
+      <trigger_condition>steady_red</trigger_condition>
+      <output_topic>/led_pipe_led_4/change_led_mode</output_topic>
+      <below_threshold_message>steady_green</below_threshold_message>
+      <above_threshold_message>steady_red</above_threshold_message>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+    </plugin>
+
+    <plugin
+      filename="libDistance_SensorSystem.so"
+      name="Distance_Sensor::Distance_SensorSystem">
+      <vehicle_name>auv4</vehicle_name>
+      <target_name>pipe_led_5</target_name>
+      <!-- Vehicle-local FLU offset -->
+      <vehicle_offset_x>0.0</vehicle_offset_x>
+      <vehicle_offset_y>0.0</vehicle_offset_y>
+      <vehicle_offset_z>-0.1</vehicle_offset_z>
+      <distance_threshold>0.3</distance_threshold>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_subscribe_topic>/led_pipe_led_5/change_led_mode</gz_subscribe_topic>
+      <trigger_condition>steady_red</trigger_condition>
+      <output_topic>/led_pipe_led_5/change_led_mode</output_topic>
+      <below_threshold_message>steady_green</below_threshold_message>
+      <above_threshold_message>steady_red</above_threshold_message>
+      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+    </plugin>
 
   </model>
 </sdf>

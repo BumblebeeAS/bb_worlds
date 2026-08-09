@@ -3,54 +3,63 @@
   <model name='pipe_led'>
     <static>true</static>
     <link name='pipe_led'>
-      <pose>0 0 0 1.57 0 0</pose>
-      <collision name='pipe_led_collision'>
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name='lightbox_collision'>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <radius>0.064</radius>
-            <length>0.12906</length>
-          </cylinder>
+          <mesh><uri>model://robotx26/pipe_led/light_box.glb</uri></mesh>
         </geometry>
       </collision>
-
-      <visual name='pipe_led_visual'>
+      <visual name="lightbox_visual">
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <radius>0.064</radius>
-            <length>0.12906</length>
-          </cylinder>
+          <mesh><uri>model://robotx26/pipe_led/light_box.glb</uri></mesh>
+        </geometry>
+      </visual>
+
+       <visual name="lightbox_1_visual">
+        <!-- <pose>-0.37208 0.034618 0.6868 -0.785 0 0</pose> -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh><uri>model://robotx26/pipe_led/led_ring.glb</uri></mesh>
         </geometry>
         <material>
-          <ambient>0.02 0.02 0.02 1</ambient>
-          <diffuse>0.02 0.02 0.02 1</diffuse>
-          <specular>0 0 0 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>1 0 0 1</specular>
+          <emissive>1 0 0 1</emissive>
         </material>
       </visual>
+
     </link>
 
     <plugin filename="libgz_led_plugin.so" name="gz::sim::systems::LedPlugin">
-      <startup_mode>off</startup_mode>
-
-      <led name="led">
-        <visual_name>pipe_led::pipe_led_visual</visual_name>
-        <default_state>
-          <color>0 0 0 1</color>
-          <intensity>0.0</intensity>
-        </default_state>
+      <led name="lightbox_1">
+        <visual_name>pipe_led::lightbox_1_visual</visual_name>
       </led>
-
-      <mode name='off'>
-        <step always_on='true'><color>0 0 0 1</color></step>
+      <startup_mode>steady_red</startup_mode>
+      <mode name="steady_red">
+        <active_leds>
+          <led>lightbox_1</led>
+        </active_leds>
+        <step always_on="true">
+          <color>1 0 0 1</color>
+          <intensity>1.0</intensity>
+        </step>
       </mode>
-
-      <mode name='steady_red'>
-        <step always_on='true'><color>1 0 0 1</color></step>
-      </mode>
-
-      <mode name='steady_green'>
-        <step always_on='true'><color>0 1 0 1</color></step>
+      <mode name="steady_green">
+        <active_leds>
+          <led>lightbox_1</led>
+        </active_leds>
+        <step always_on="true">
+          <color>0 1 0 1</color>
+          <intensity>1.0</intensity>
+        </step>
       </mode>
     </plugin>
+
+    
+
   </model>
 </sdf>
