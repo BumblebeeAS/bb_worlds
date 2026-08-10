@@ -75,7 +75,22 @@
           </mesh>
         </geometry>
        
-      </visual>  
+      </visual> 
+
+      <!-- <visual name='bulb_visual'>
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.128 0.128 0.12906</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual> -->
     </link>
     
 

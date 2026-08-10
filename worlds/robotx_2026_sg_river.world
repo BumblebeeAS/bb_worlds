@@ -452,32 +452,32 @@
     <include>
       <name>sp_entry</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>32.134 -398.723 0 0 0 0</pose>
+      <pose>32.134 -398.723 0.32 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate1_port</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>37.134 -400.723 0 0 0 0</pose>
+      <pose>37.134 -400.723 0.34 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate1_star</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>38.134 -405.723 0 0 0 0</pose>
+      <pose>38.134 -405.723 0.33 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate2_port</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>43.134 -402.723 0 0 0 0</pose>
+      <pose>43.134 -402.723 0.33 0 0 0</pose>
     </include>
     <include>
       <name>sp_gate2_star</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>44.134 -407.723 0 0 0 0</pose>
+      <pose>44.134 -407.723 0.31 0 0 0</pose>
     </include>
     <include>
       <name>sp_exit</name>
       <uri>model://robotx26/safe_passage_buoy</uri>
-      <pose>49.134 -404.723 0 0 0 0</pose>
+      <pose>49.134 -404.723 0.34 0 0 0</pose>
     </include>
   </world>
 
