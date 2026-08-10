@@ -94,7 +94,7 @@
 <plugin
       filename="libDistance_SensorSystem.so"
       name="Distance_Sensor::Distance_SensorSystem">
-      <vehicle_name>auv4</vehicle_name>
+      <vehicle_name>auv5</vehicle_name>
       <target_name>pipe_led_1</target_name>
       <!-- Vehicle-local FLU offset -->
       <vehicle_offset_x>0.0</vehicle_offset_x>
@@ -113,7 +113,7 @@
     <plugin
       filename="libDistance_SensorSystem.so"
       name="Distance_Sensor::Distance_SensorSystem">
-      <vehicle_name>auv4</vehicle_name>
+      <vehicle_name>auv5</vehicle_name>
       <target_name>pipe_led_2</target_name>
       <!-- Vehicle-local FLU offset -->
       <vehicle_offset_x>0.0</vehicle_offset_x>
@@ -132,7 +132,7 @@
     <plugin
       filename="libDistance_SensorSystem.so"
       name="Distance_Sensor::Distance_SensorSystem">
-      <vehicle_name>auv4</vehicle_name>
+      <vehicle_name>auv5</vehicle_name>
       <target_name>pipe_led_3</target_name>
       <!-- Vehicle-local FLU offset -->
       <vehicle_offset_x>0.0</vehicle_offset_x>
@@ -151,7 +151,7 @@
     <plugin
       filename="libDistance_SensorSystem.so"
       name="Distance_Sensor::Distance_SensorSystem">
-      <vehicle_name>auv4</vehicle_name>
+      <vehicle_name>auv5</vehicle_name>
       <target_name>pipe_led_4</target_name>
       <!-- Vehicle-local FLU offset -->
       <vehicle_offset_x>0.0</vehicle_offset_x>
@@ -170,7 +170,7 @@
     <plugin
       filename="libDistance_SensorSystem.so"
       name="Distance_Sensor::Distance_SensorSystem">
-      <vehicle_name>auv4</vehicle_name>
+      <vehicle_name>auv5</vehicle_name>
       <target_name>pipe_led_5</target_name>
       <!-- Vehicle-local FLU offset -->
       <vehicle_offset_x>0.0</vehicle_offset_x>
