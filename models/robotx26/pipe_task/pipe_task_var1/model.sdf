@@ -102,12 +102,7 @@
       <vehicle_offset_z>-0.1</vehicle_offset_z>
       <distance_threshold>0.3</distance_threshold>
       <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
-      <gz_subscribe_topic>/led_pipe_led_1/change_led_mode</gz_subscribe_topic>
-      <trigger_condition>steady_red</trigger_condition>
-      <output_topic>/led_pipe_led_1/change_led_mode</output_topic>
-      <below_threshold_message>steady_green</below_threshold_message>
-      <above_threshold_message>steady_red</above_threshold_message>
-      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_publish_topic>/robotx/pipe_led_1/activate</gz_publish_topic>
     </plugin>
 
     <plugin
@@ -121,12 +116,7 @@
       <vehicle_offset_z>-0.1</vehicle_offset_z>
       <distance_threshold>0.3</distance_threshold>
       <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
-      <gz_subscribe_topic>/led_pipe_led_2/change_led_mode</gz_subscribe_topic>
-      <trigger_condition>steady_red</trigger_condition>
-      <output_topic>/led_pipe_led_2/change_led_mode</output_topic>
-      <below_threshold_message>steady_green</below_threshold_message>
-      <above_threshold_message>steady_red</above_threshold_message>
-      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_publish_topic>/robotx/pipe_led_2/activate</gz_publish_topic>
     </plugin>
 
     <plugin
@@ -140,12 +130,7 @@
       <vehicle_offset_z>-0.1</vehicle_offset_z>
       <distance_threshold>0.3</distance_threshold>
       <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
-      <gz_subscribe_topic>/led_pipe_led_3/change_led_mode</gz_subscribe_topic>
-      <trigger_condition>steady_red</trigger_condition>
-      <output_topic>/led_pipe_led_3/change_led_mode</output_topic>
-      <below_threshold_message>steady_green</below_threshold_message>
-      <above_threshold_message>steady_red</above_threshold_message>
-      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_publish_topic>/robotx/pipe_led_3/activate</gz_publish_topic>
     </plugin>
 
     <plugin
@@ -159,12 +144,7 @@
       <vehicle_offset_z>-0.1</vehicle_offset_z>
       <distance_threshold>0.3</distance_threshold>
       <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
-      <gz_subscribe_topic>/led_pipe_led_4/change_led_mode</gz_subscribe_topic>
-      <trigger_condition>steady_red</trigger_condition>
-      <output_topic>/led_pipe_led_4/change_led_mode</output_topic>
-      <below_threshold_message>steady_green</below_threshold_message>
-      <above_threshold_message>steady_red</above_threshold_message>
-      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_publish_topic>/robotx/pipe_led_4/activate</gz_publish_topic>
     </plugin>
 
     <plugin
@@ -178,12 +158,7 @@
       <vehicle_offset_z>-0.1</vehicle_offset_z>
       <distance_threshold>0.3</distance_threshold>
       <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
-      <gz_subscribe_topic>/led_pipe_led_5/change_led_mode</gz_subscribe_topic>
-      <trigger_condition>steady_red</trigger_condition>
-      <output_topic>/led_pipe_led_5/change_led_mode</output_topic>
-      <below_threshold_message>steady_green</below_threshold_message>
-      <above_threshold_message>steady_red</above_threshold_message>
-      <minimum_time_within_threshold>1.0</minimum_time_within_threshold>
+      <gz_publish_topic>/robotx/pipe_led_5/activate</gz_publish_topic>
     </plugin>
 
   </model>

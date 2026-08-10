@@ -106,6 +106,18 @@ def led_change_mode(name, group_prefix="led"):
     )
 
 
+def pipe_led_proximity(pipe_index):
+    """Bridge one pipe's Gazebo proximity event to ROS."""
+    topic = f"/robotx/pipe_led_{pipe_index}/activate"
+    return Bridge(
+        gz_topic=topic,
+        ros_topic=topic,
+        gz_type="gz.msgs.StringMsg",
+        ros_type="std_msgs/msg/String",
+        direction=BridgeDirection.GZ_TO_ROS,
+    )
+
+
 def joint_states(world_name, model_name):
     gz_topic = f"/world/{world_name}/model/{model_name}/joint_state"
     print(f"mapping {gz_topic} to joint_states")

@@ -37,8 +37,12 @@
     <plugin filename="libgz_led_plugin.so" name="gz::sim::systems::LedPlugin">
       <led name="lightbox_1">
         <visual_name>pipe_led::lightbox_1_visual</visual_name>
+        <default_state>
+          <color>0 0 0 1</color>
+          <intensity>0.0</intensity>
+        </default_state>
       </led>
-      <startup_mode>steady_red</startup_mode>
+      <startup_mode>off</startup_mode>
       <mode name="steady_red">
         <active_leds>
           <led>lightbox_1</led>
@@ -57,9 +61,32 @@
           <intensity>1.0</intensity>
         </step>
       </mode>
+
+      <mode name="steady_blue">
+        <active_leds>
+          <led>lightbox_1</led>
+        </active_leds>
+        <step always_on="true">
+          <color>0 0 1 1</color>
+          <intensity>1.0</intensity>
+        </step>
+      </mode>
+
+      <mode name="off">
+        <active_leds>
+          <led>lightbox_1</led>
+        </active_leds>
+        <step always_on="true">
+          <color>0 0 0 1</color>
+          <intensity>1.0</intensity>
+        </step>
+      </mode>
+
+
+
     </plugin>
 
-    
+
 
   </model>
 </sdf>

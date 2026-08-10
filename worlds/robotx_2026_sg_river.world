@@ -376,7 +376,7 @@
     <!-- Underwater pipe task (RobotX 2026). Pose is world-relative. -->
     <include>
       <name>pipe_task</name>
-      <uri>model://robotx26/pipe_task/pipe_task_var3</uri>
+      <uri>model://robotx26/pipe_task/pipe_task_var1</uri>
       <pose>60.173 -409.882 -2.11  0 0 1.93159</pose>
     </include>
 
