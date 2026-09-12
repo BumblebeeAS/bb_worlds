@@ -11,10 +11,10 @@ def generate_launch_description():
     config = os.path.join(
         get_package_share_directory("bb_worlds"),
         "config",
-        "uav2.launch.yaml",
+        "uav.launch.yaml",
     )
 
-    launch_objects = [PushRosNamespace("/uav2")]
+    launch_objects = [PushRosNamespace("/uav")]
 
     nodes = [
         Node(
