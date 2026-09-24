@@ -13,6 +13,7 @@ class MeshMarkerPublisher(Node):
         self.mesh_resource = (
             self.declare_parameter(
                 "mesh_resource",
+                rclpy.Parameter.Type.STRING,
                 descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING),
             )
             .get_parameter_value()
@@ -21,6 +22,7 @@ class MeshMarkerPublisher(Node):
         self.frame_id = (
             self.declare_parameter(
                 "frame_id",
+                rclpy.Parameter.Type.STRING,
                 descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING),
             )
             .get_parameter_value()
