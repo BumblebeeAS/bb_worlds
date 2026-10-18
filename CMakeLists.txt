@@ -18,19 +18,9 @@ ament_python_install_package(
 # Install bb_worlds Python package
 ament_python_install_package(${PROJECT_NAME})
 
-add_executable(pose_tf_broadcaster src/pose_tf_broadcaster.cc)
-target_link_libraries(pose_tf_broadcaster PRIVATE
-  ${geometry_msgs_TARGETS}
-  rclcpp::rclcpp
-  tf2::tf2
-  tf2_ros::tf2_ros
-  ${tf2_msgs_TARGETS}
-)
-
-# Resources
-install(TARGETS
-  pose_tf_broadcaster
-  DESTINATION lib/${PROJECT_NAME})
+ament_auto_add_executable(pose_tf_broadcaster src/pose_tf_broadcaster.cc)
+# Executables do not expose link dependencies to other targets.
+set_property(TARGET pose_tf_broadcaster PROPERTY INTERFACE_LINK_LIBRARIES "")
 
 #============================================================================
 # Resources
@@ -46,4 +36,4 @@ install(PROGRAMS
   ${PROJECT_NAME}/vis_marker_publisher_node.py
   DESTINATION lib/${PROJECT_NAME})
 
-ament_package()
+ament_auto_package()
