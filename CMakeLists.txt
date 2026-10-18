@@ -19,7 +19,7 @@ ament_python_install_package(
 ament_python_install_package(${PROJECT_NAME})
 
 add_executable(pose_tf_broadcaster src/pose_tf_broadcaster.cc)
-target_link_libraries(pose_tf_broadcaster PUBLIC
+target_link_libraries(pose_tf_broadcaster PRIVATE
   ${geometry_msgs_TARGETS}
   rclcpp::rclcpp
   tf2::tf2
